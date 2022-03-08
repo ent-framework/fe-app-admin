@@ -1,4 +1,4 @@
-import { BasicColumn } from 'fe-ent-core/es/components/Table';
+import { BasicColumn } from 'fe-ent-core/lib/components/Table';
 import { FormSchema } from 'fe-ent-core/lib/components/Table';
 import { h } from 'vue';
 import { Switch } from 'ant-design-vue';

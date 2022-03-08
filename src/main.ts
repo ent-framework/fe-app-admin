@@ -29,7 +29,7 @@ import 'fe-ent-core/theme/index.less';
 
 import { default as LAYOUT } from 'fe-ent-core/lib/layouts/default/index';
 import { default as IFRAME } from 'fe-ent-core/lib/views/sys/iframe/FrameBlank';
-
+console.log(process.env);
 async function bootstrap() {
   const app = createApp(App);
 
