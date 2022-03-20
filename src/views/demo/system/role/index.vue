@@ -5,7 +5,7 @@
         <a-button type="primary" @click="handleCreate"> 新增角色 </a-button>
       </template>
       <template #action="{ record }">
-        <TableAction
+        <EntTableAction
           :actions="[
             {
               icon: 'clarity:note-edit-line',
@@ -29,17 +29,17 @@
 <script lang="ts">
   import { defineComponent } from 'vue';
 
-  import { EntTable, useTable, TableAction } from 'fe-ent-core/lib/components/Table';
-  import { getRoleListByPage } from 'fe-ent-core/lib/api/demo/system';
+  import { EntTable, useTable, EntTableAction } from 'fe-ent-core/lib/components/table';
+  import { getRoleListByPage } from 'fe-ent-core/lib/logics/api/demo/system';
 
-  import { useDrawer } from 'fe-ent-core/lib/components/Drawer';
-  import RoleDrawer from './RoleDrawer.vue';
+  import { useDrawer } from 'fe-ent-core/lib/components/drawer';
+  import RoleDrawer from './role-drawer.vue';
 
-  import { columns, searchFormSchema } from './role.data';
+  import { columns, searchFormSchema } from './role-data';
 
   export default defineComponent({
     name: 'RoleManagement',
-    components: { EntTable, RoleDrawer, TableAction },
+    components: { EntTable, RoleDrawer, EntTableAction },
     setup() {
       const [registerDrawer, { openDrawer }] = useDrawer();
       const [registerTable, { reload }] = useTable({

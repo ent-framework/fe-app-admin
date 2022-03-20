@@ -5,7 +5,7 @@
         <a-button type="primary" @click="handleCreate"> 新增部门 </a-button>
       </template>
       <template #action="{ record }">
-        <TableAction
+        <EntTableAction
           :actions="[
             {
               icon: 'clarity:note-edit-line',
@@ -29,17 +29,17 @@
 <script lang="ts">
   import { defineComponent } from 'vue';
 
-  import { EntTable, useTable, TableAction } from 'fe-ent-core/lib/components/Table';
-  import { getDeptList } from 'fe-ent-core/lib/api/demo/system';
+  import { EntTable, useTable, EntTableAction } from 'fe-ent-core/lib/components/table';
+  import { getDeptList } from 'fe-ent-core/lib/logics/api/demo/system';
 
-  import { useModal } from 'fe-ent-core/lib/components/Modal';
-  import DeptModal from './DeptModal.vue';
+  import { useModal } from 'fe-ent-core/lib/components/modal';
+  import DeptModal from './dept-modal.vue';
 
-  import { columns, searchFormSchema } from './dept.data';
+  import { columns, searchFormSchema } from './dept-data';
 
   export default defineComponent({
     name: 'DeptManagement',
-    components: { EntTable, DeptModal, TableAction },
+    components: { EntTable, DeptModal, EntTableAction },
     setup() {
       const [registerModal, { openModal }] = useModal();
       const [registerTable, { reload }] = useTable({

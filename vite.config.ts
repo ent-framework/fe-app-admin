@@ -1,5 +1,5 @@
 import type { UserConfig, ConfigEnv } from 'vite';
-import { createViteConfig } from 'fe-ent-cli';
+import { createViteConfig } from 'fe-ent-build';
 
 export default ({ command, mode }: ConfigEnv): UserConfig => {
   const alias = [

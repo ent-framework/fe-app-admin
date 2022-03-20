@@ -17,7 +17,7 @@
     "noUnusedParameters": true,
     "experimentalDecorators": true,
     "lib": ["dom", "esnext"],
-    "types": ["vite/client", "jest", "fe-ent-core/types"],
+    "types": ["vite/client", "jest", "fe-ent-core/support"],
     "typeRoots": ["./node_modules/@types/"],
     "noImplicitAny": false,
     "skipLibCheck": true,
@@ -34,5 +34,5 @@
     "mock/**/*.ts",
     "vite.config.ts"
   ],
-  "exclude": ["node_modules", "tests/server/**/*.ts", "dist", "**/*.js"]
+  "exclude": ["node_modules", "tests/server/**/*.ts", "dist"]
 }

@@ -23,8 +23,8 @@
     downloadByBase64,
     downloadByOnlineUrl,
   } from 'fe-ent-core/lib/utils/file/download';
-  import imgBase64 from './imgBase64';
-  import { EntPageWrapper } from 'fe-ent-core/lib/components/Page';
+  import imgBase64 from './img-base-64';
+  import { EntPageWrapper } from 'fe-ent-core/lib/components/page';
   import { Alert } from 'ant-design-vue';
 
   export default defineComponent({

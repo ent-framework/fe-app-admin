@@ -1,7 +1,6 @@
 {
   "name": "fe-app-admin",
   "version": "1.0.0",
-  "private": true,
   "author": {
     "name": "jeff qian",
     "email": "baojian.qian@accenture.com",
@@ -12,7 +11,7 @@
     "build": "cross-env NODE_ENV=production vite build",
     "build:test": "cross-env vite build --mode test && esno ./build/script/postBuild.ts",
     "build:no-cache": "yarn clean:cache && npm run build",
-    "clean": "rimraf dist && rimraf node_modules",
+    "clean": "rimraf dist",
     "clean:cache": "rimraf node_modules/.cache/ && rimraf node_modules/.vite",
     "report": "cross-env REPORT=true npm run build",
     "type:check": "vue-tsc --noEmit --skipLibCheck",
@@ -32,12 +31,22 @@
     "gen:icon": "esno ./build/generate/icon/index.ts"
   },
   "dependencies": {
+    "vue": "3.2.31",
     "ant-design-vue": "2.2.8",
-    "fe-ent-core": "1.0.19",
-    "vite-plugin-ent-theme": "1.0.8",
-    "vue": "3.2.31"
+    "lodash": "^4.17.21",
+    "fe-ent-core": "1.2.12",
+    "fe-ent-theme-api": "1.2.12",
+    "@fe-ent-extension/code-editor": "1.2.12",
+    "@fe-ent-extension/echarts": "1.2.12",
+    "echarts": "^5.2.2",
+    "@fe-ent-extension/flow-chart": "1.2.12",
+    "@fe-ent-extension/markdown": "1.2.12",
+    "@fe-ent-extension/qrcode": "1.2.12",
+    "@fe-ent-extension/tinymce": "1.2.12"
   },
   "devDependencies": {
+    "fe-ent-build": "1.2.12",
+    "vite-plugin-ent-theme": "1.2.12",
     "@commitlint/cli": "^14.1.0",
     "@commitlint/config-conventional": "^14.1.0",
     "@iconify/json": "^1.1.422",
@@ -78,7 +87,6 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.0.3",
     "esno": "^0.10.1",
-    "fe-ent-cli": "1.0.11",
     "fs-extra": "^10.0.0",
     "husky": "^7.0.4",
     "inquirer": "^8.2.0",
