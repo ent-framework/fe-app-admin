@@ -4,21 +4,21 @@ import { default as LAYOUT } from 'fe-ent-core/lib/layouts/default';
 import { t } from 'fe-ent-core/lib/hooks/web/use-i18n';
 
 const dashboard: AppRouteModule = {
-  path: '/about',
-  name: 'About',
+  path: '/base-data',
+  name: 'BaseData',
   component: LAYOUT,
-  redirect: '/about/index',
+  redirect: '/base-data/index',
   meta: {
     hideChildrenInMenu: true,
     icon: 'simple-icons:about-dot-me',
-    title: t('routes.dashboard.about'),
-    orderNo: 100000,
+    title: '基础数据',
+    orderNo: 20,
   },
   children: [
     {
-      path: 'index',
-      name: 'AboutPage',
-      component: () => import('/@/views/sys/about/index.vue'),
+      path: 'config',
+      name: 'Config',
+      component: () => import('/@/views/system/config/index.vue'),
       meta: {
         title: t('routes.dashboard.about'),
         icon: 'simple-icons:about-dot-me',
