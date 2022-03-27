@@ -15,6 +15,9 @@ export const getOrgTree = (params?: OrgParams) =>
   defHttp.get<OrgListGetResultModel>({ url: Api.OrgTree, params });
 
 export const saveOrUpdateOrg = (data: OrgItem) => {
+  if (!data.orgParentId) {
+    data.orgParentId = -1;
+  }
   if (data.orgId && data?.orgId > 0) {
     return defHttp.post<void>({ url: Api.OrgUpdate, data });
   } else {

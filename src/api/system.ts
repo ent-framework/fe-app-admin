@@ -1,44 +1,53 @@
 import {
-  AccountParams,
-  DeptListItem,
-  MenuParams,
-  RoleParams,
-  RolePageParams,
-  MenuListGetResultModel,
-  DeptListGetResultModel,
   AccountListGetResultModel,
-  RolePageListGetResultModel,
-  RoleListGetResultModel,
 } from '../model/system-model';
-import { defHttp } from '@ent-core/utils/http/axios';
+import { defHttp } from 'fe-ent-core/lib/utils/http/axios';
 
 enum Api {
-  AccountList = '/api/getAccountList',
-  IsAccountExist = '/api/accountExist',
-  DeptList = '/api/getDeptList',
-  setRoleStatus = '/api/setRoleStatus',
-  MenuList = '/api/getMenuList',
-  RolePageList = '/api/getRoleListByPage',
-  GetAllRoleList = '/api/getAllRoleList',
+  SysConfigGroupPage = '/dict/get-config-group-page',
+  LanguageGroupPage = '/dict/get-languages-page',
+  SysConfigPage = '/sys-config/page',
+  DictTypePage = '/dict-type/page',
+  DictPage = '/dict/page',
+  LanguagePage = '/i18n/page',
+  LanguageCreate = '/i18n/create',
+  OnlineUserList = '/sys-user/online-user-list',
+  RemoveSession = '/sys-user/remove-session',
+  LoginLogsPage = '/login-log/page',
+  LoginLogsDetail = '/login-log/detail',
+  LoginLogsDeleteAll = '/login-log/delete-all',
+  LogsPage = '/log-manager/page',
+  LogsList = '/log-manager/list',
+  LogsDetail = '/log-manager/detail',
+  LogsRemove = '/log-manager/remove',
 }
 
-export const getAccountList = (params: AccountParams) =>
-  defHttp.get<AccountListGetResultModel>({ url: Api.AccountList, params });
+export const getSysConfigGroupPage = (params: any) =>
+  defHttp.get<AccountListGetResultModel>({ url: Api.SysConfigGroupPage, params });
 
-export const getDeptList = (params?: DeptListItem) =>
-  defHttp.get<DeptListGetResultModel>({ url: Api.DeptList, params });
+export const getLanguageGroupPage = (params: any) =>
+  defHttp.get<AccountListGetResultModel>({ url: Api.LanguageGroupPage, params });
 
-export const getMenuList = (params?: MenuParams) =>
-  defHttp.get<MenuListGetResultModel>({ url: Api.MenuList, params });
+export const getSysConfigPage = (params: any) =>
+  defHttp.get<AccountListGetResultModel>({ url: Api.SysConfigPage, params });
 
-export const getRoleListByPage = (params?: RolePageParams) =>
-  defHttp.get<RolePageListGetResultModel>({ url: Api.RolePageList, params });
+export const getDictTypePage = (params: any) =>
+  defHttp.get<AccountListGetResultModel>({ url: Api.DictTypePage, params });
 
-export const getAllRoleList = (params?: RoleParams) =>
-  defHttp.get<RoleListGetResultModel>({ url: Api.GetAllRoleList, params });
+export const getDictPage = (params: any) =>
+  defHttp.get<AccountListGetResultModel>({ url: Api.DictPage, params });
 
-export const setRoleStatus = (id: number, status: string) =>
-  defHttp.post({ url: Api.setRoleStatus, params: { id, status } });
+export const getLanguagePage = (params: any) =>
+  defHttp.get<AccountListGetResultModel>({ url: Api.LanguagePage, params });
 
-export const isAccountExist = (account: string) =>
-  defHttp.post({ url: Api.IsAccountExist, params: { account } }, { errorMessageMode: 'none' });
+export const getOnlineUserList = (params: any) =>
+  defHttp.get<AccountListGetResultModel>({ url: Api.OnlineUserList, params });
+
+export const removeSession = (params: any) =>
+  defHttp.post<AccountListGetResultModel>({ url: Api.RemoveSession, params });
+
+export const getLoginLogsPage = (params: any) =>
+  defHttp.get<AccountListGetResultModel>({ url: Api.LoginLogsPage, params });
+
+export const getLogsPage = (params: any) =>
+  defHttp.get<AccountListGetResultModel>({ url: Api.LogsPage, params });

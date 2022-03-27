@@ -5,25 +5,27 @@ export type MenuParams = {
   status?: string;
 };
 
-export interface MenuListItem {
-  id: string;
-  orderNo: string;
-  createTime: string;
-  status: number;
-  icon: string;
-  component: string;
-  permission: string;
+export interface MenuModel {
+  menuId?: number;
+  menuParentId?: number;
+  appId?: number;
+  menuName?: string;
+  menuType?: number;
+  menuCode?: string;
+  visible?: string;
+  menuSort?: number;
+  remark?: string;
+  router?: string;
+  icon?: string;
+  status?: number;
+  component?: string;
+  linkOpenType?: string;
+  linkUrl?: string;
 }
 
-export interface RoleListItem {
-  id: string;
-  roleName: string;
-  roleValue: string;
-  status: number;
-  orderNo: string;
-  createTime: string;
-}
+export type MenuResourceParams = {
+  menuId: number;
+  selectedResource?: number[];
+};
 
-export type MenuListGetResultModel = BasicFetchResult<MenuListItem>;
-
-export type RolePageListGetResultModel = BasicFetchResult<RoleListItem>;
+export type MenuListGetResultModel = BasicFetchResult<MenuModel>;

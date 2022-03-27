@@ -1,21 +1,39 @@
 import { BasicPageParams, BasicFetchResult } from 'fe-ent-core/lib/logics/model';
+import { CheckKeys } from 'fe-ent-core/lib/components/tree';
 
 export type RoleParams = {
   roleName?: string;
-  status?: string;
+  statusFlag?: number;
 };
 
 export type RolePageParams = BasicPageParams & RoleParams;
 
-export interface RoleListItem {
-  id: string;
-  roleName: string;
-  roleValue: string;
-  status: number;
-  orderNo: string;
-  createTime: string;
+export interface RoleModel {
+  roleId?: number;
+  roleName?: string;
+  roleCode?: string;
+  roleSort: number;
+  dataScopeType: number;
+  statusFlag: number;
+  remark: string;
+  roleSystemFlag: string;
+  roleTypeCode: string;
 }
 
-export type RolePageListGetResultModel = BasicFetchResult<RoleListItem>;
+export interface GrantMenuRoleParams {
+  roleId?: number;
+  grantMenuIdList: CheckKeys;
+}
 
-export type RoleListGetResultModel = RoleListItem[];
+export interface GrantMenuResourceParams {
+  roleId?: number;
+  grantMenuIdList?: CheckKeys;
+}
+
+export interface RoleRequest extends RoleModel {
+  grantAddMenuFlag?: boolean;
+}
+
+export type RolePageListGetResultModel = BasicFetchResult<RoleModel>;
+
+export type RoleListGetResultModel = RoleModel[];

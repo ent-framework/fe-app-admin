@@ -5,8 +5,8 @@ export type UserParams = BasicPageParams & {
   nickname?: string;
 };
 
-export interface UserListItem {
-  id: string;
+export interface UserModel {
+  userId?: number;
   User: string;
   email: string;
   nickname: string;
@@ -16,4 +16,4 @@ export interface UserListItem {
   status: number;
 }
 
-export type UserListGetResultModel = BasicFetchResult<UserListItem>;
+export type UserListGetResultModel = BasicFetchResult<UserModel>;
