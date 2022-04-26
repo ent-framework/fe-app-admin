@@ -8,12 +8,12 @@ overrides:
 specifiers:
   '@commitlint/cli': ^14.1.0
   '@commitlint/config-conventional': ^14.1.0
-  '@fe-ent-extension/code-editor': 1.2.18
-  '@fe-ent-extension/echarts': 1.2.18
-  '@fe-ent-extension/flow-chart': 1.2.18
-  '@fe-ent-extension/markdown': 1.2.18
-  '@fe-ent-extension/qrcode': 1.2.18
-  '@fe-ent-extension/tinymce': 1.2.18
+  '@fe-ent-extension/code-editor': 1.2.20
+  '@fe-ent-extension/echarts': 1.2.20
+  '@fe-ent-extension/flow-chart': 1.2.20
+  '@fe-ent-extension/markdown': 1.2.20
+  '@fe-ent-extension/qrcode': 1.2.20
+  '@fe-ent-extension/tinymce': 1.2.20
   '@iconify/json': ^1.1.422
   '@pnpm/find-workspace-packages': 3.1.40
   '@pnpm/logger': 4.0.0
@@ -54,9 +54,9 @@ specifiers:
   eslint-plugin-prettier: ^4.0.0
   eslint-plugin-vue: ^8.0.3
   esno: ^0.10.1
-  fe-ent-build: 1.2.18
-  fe-ent-core: 1.2.18
-  fe-ent-theme-api: 1.2.18
+  fe-ent-build: 1.2.20
+  fe-ent-core: 1.2.20
+  fe-ent-theme-api: 1.2.20
   fs-extra: ^10.0.0
   husky: ^7.0.4
   inquirer: ^8.2.0
@@ -77,21 +77,21 @@ specifiers:
   stylelint-order: ^5.0.0
   typescript: 4.5.5
   vite: 2.8.6
-  vite-plugin-ent-theme: 1.2.18
+  vite-plugin-ent-theme: 1.2.20
   vite-plugin-windicss: 1.8.2
   vue: 3.2.31
 
 dependencies:
-  '@fe-ent-extension/code-editor': 1.2.18_2320054a0f7d2febd2768c8b1d831f76
-  '@fe-ent-extension/echarts': 1.2.18_351562fa70523a2969ce7d27dd5ec988
-  '@fe-ent-extension/flow-chart': 1.2.18_f3e6963327f42948e7f4c270f4dd714f
-  '@fe-ent-extension/markdown': 1.2.18_2320054a0f7d2febd2768c8b1d831f76
-  '@fe-ent-extension/qrcode': 1.2.18_c461e15fb6870f381699ce7d89822fdd
-  '@fe-ent-extension/tinymce': 1.2.18_2320054a0f7d2febd2768c8b1d831f76
+  '@fe-ent-extension/code-editor': 1.2.20_b079859d194259e56b4293f7e573ff96
+  '@fe-ent-extension/echarts': 1.2.20_e2ae6f8f90d4122c86ca2f7a0e98c8dc
+  '@fe-ent-extension/flow-chart': 1.2.20_5c6ed9f5a14879256b77d46fcd93eb6e
+  '@fe-ent-extension/markdown': 1.2.20_b079859d194259e56b4293f7e573ff96
+  '@fe-ent-extension/qrcode': 1.2.20_07157c69b4d014a1d77da071f8bfb240
+  '@fe-ent-extension/tinymce': 1.2.20_b079859d194259e56b4293f7e573ff96
   ant-design-vue: registry.npmmirror.com/ant-design-vue/2.2.8_4f726de02e89ff745196f225ebb1bbcf
   echarts: 5.3.1
-  fe-ent-core: 1.2.18_0d46f552b0d512b2153b875288393084
-  fe-ent-theme-api: 1.2.18_vite@2.8.6
+  fe-ent-core: 1.2.20_b0d6fa63c906b654feefa953770a6a71
+  fe-ent-theme-api: 1.2.20_vite@2.8.6
   lodash: 4.17.21
   vue: registry.npmmirror.com/vue/3.2.31
 
@@ -136,7 +136,7 @@ devDependencies:
   eslint-plugin-prettier: registry.npmmirror.com/eslint-plugin-prettier/4.0.0_f3d13a703a9c1079e3d1af6044603beb
   eslint-plugin-vue: registry.npmmirror.com/eslint-plugin-vue/8.5.0_eslint@8.10.0
   esno: registry.npmmirror.com/esno/0.10.1
-  fe-ent-build: 1.2.18_822394d78e7b7688cd823028fe0837d1
+  fe-ent-build: 1.2.20_25871f4b58e7cc0031fe5aedb004b392
   fs-extra: registry.npmmirror.com/fs-extra/10.0.1
   husky: registry.npmmirror.com/husky/7.0.4
   inquirer: registry.npmmirror.com/inquirer/8.2.0
@@ -156,7 +156,7 @@ devDependencies:
   stylelint-order: registry.npmmirror.com/stylelint-order/5.0.0_stylelint@14.5.3
   typescript: registry.npmmirror.com/typescript/4.5.5
   vite: registry.npmmirror.com/vite/2.8.6
-  vite-plugin-ent-theme: 1.2.18_vite@2.8.6
+  vite-plugin-ent-theme: 1.2.20_vite@2.8.6
   vite-plugin-windicss: registry.npmmirror.com/vite-plugin-windicss/1.8.2_vite@2.8.6
 
 packages:
@@ -1429,8 +1429,8 @@ packages:
     resolution: {integrity: sha512-8HqW8EVqjnCmWXVpqAOZf+EGESdkR27odcMMMGefgKXtar00SoYNSryGv//TELI4T3QFsECo78p+0lmalk/CFA==}
     dev: true
 
-  /@fe-ent-extension/code-editor/1.2.18_2320054a0f7d2febd2768c8b1d831f76:
-    resolution: {integrity: sha512-s8UebevN3XmHpVwyBjFA2YBqUVFH8mTCYx4RH7VYFAdhUyNjDLYCq/aAAu8IbK2T3qLr1qxidet3bakloKhoSg==}
+  /@fe-ent-extension/code-editor/1.2.20_b079859d194259e56b4293f7e573ff96:
+    resolution: {integrity: sha512-rMZi/gjryDLTLO/1KoXwNEAjYr/dTPREoJWjLmO3Me27CMAHPt5n7IY0na+eF5qRd0YBUmoGFqfd5aGf756cgw==}
     engines: {node: ^12 || >=14}
     peerDependencies:
       ant-design-vue: 2.2.8
@@ -1439,12 +1439,12 @@ packages:
     dependencies:
       ant-design-vue: registry.npmmirror.com/ant-design-vue/2.2.8_4f726de02e89ff745196f225ebb1bbcf
       codemirror: 5.65.2
-      fe-ent-core: 1.2.18_0d46f552b0d512b2153b875288393084
+      fe-ent-core: 1.2.20_b0d6fa63c906b654feefa953770a6a71
       vue: registry.npmmirror.com/vue/3.2.31
     dev: false
 
-  /@fe-ent-extension/echarts/1.2.18_351562fa70523a2969ce7d27dd5ec988:
-    resolution: {integrity: sha512-w4v3l010Q4AlO4r6dK2SANcx/xHDSBx2B3BGutjMNqypi8mcvNxYxAagtcV8DoIW65OnE8OIQhPstiCzKxe6QA==}
+  /@fe-ent-extension/echarts/1.2.20_e2ae6f8f90d4122c86ca2f7a0e98c8dc:
+    resolution: {integrity: sha512-8/mzn6f1ju0ZI3XnhOTL/mSzsoySPvHLUuNNTfdNJ/v2scDAD0BK7W/ZsijcINTso1oW/LuOin+R7jIgdDI8jw==}
     engines: {node: ^12 || >=14}
     peerDependencies:
       ant-design-vue: 2.2.8
@@ -1456,13 +1456,13 @@ packages:
       '@ant-design/colors': 6.0.0
       ant-design-vue: registry.npmmirror.com/ant-design-vue/2.2.8_4f726de02e89ff745196f225ebb1bbcf
       echarts: 5.3.1
-      fe-ent-core: 1.2.18_0d46f552b0d512b2153b875288393084
+      fe-ent-core: 1.2.20_b0d6fa63c906b654feefa953770a6a71
       lodash: 4.17.21
       vue: registry.npmmirror.com/vue/3.2.31
     dev: false
 
-  /@fe-ent-extension/flow-chart/1.2.18_f3e6963327f42948e7f4c270f4dd714f:
-    resolution: {integrity: sha512-YxlodQO8P+BuI5B4ADKCUvwACrKty8RrHQbYevvO4LA7CfAiDiFUOd2VPK8OaCVHIjKwkpEUXPpGX7oXLvcPTQ==}
+  /@fe-ent-extension/flow-chart/1.2.20_5c6ed9f5a14879256b77d46fcd93eb6e:
+    resolution: {integrity: sha512-3JEav2kYr7Xtugowh6UF5hgBv1vdsL04Elvdahs7msAKuvoVVjFM67xflFiRHOueTjJ0l86BpwXkvABJwpp4CQ==}
     engines: {node: ^12 || >=14}
     peerDependencies:
       '@fe-ent-extension/code-editor': ^1.0.4
@@ -1471,16 +1471,16 @@ packages:
       vue: 3.2.31
     dependencies:
       '@ant-design/colors': 6.0.0
-      '@fe-ent-extension/code-editor': 1.2.18_2320054a0f7d2febd2768c8b1d831f76
+      '@fe-ent-extension/code-editor': 1.2.20_b079859d194259e56b4293f7e573ff96
       '@logicflow/core': 1.1.6
       '@logicflow/extension': 1.1.6
       ant-design-vue: registry.npmmirror.com/ant-design-vue/2.2.8_4f726de02e89ff745196f225ebb1bbcf
-      fe-ent-core: 1.2.18_0d46f552b0d512b2153b875288393084
+      fe-ent-core: 1.2.20_b0d6fa63c906b654feefa953770a6a71
       vue: registry.npmmirror.com/vue/3.2.31
     dev: false
 
-  /@fe-ent-extension/markdown/1.2.18_2320054a0f7d2febd2768c8b1d831f76:
-    resolution: {integrity: sha512-P5E2Drp7Tn+fgo2tWJyVrEurhSSiW7wytWl9hR+UDUlytWHZgBsHnbHFtoBR/09n0IVwtHg7SChhVk201AggSQ==}
+  /@fe-ent-extension/markdown/1.2.20_b079859d194259e56b4293f7e573ff96:
+    resolution: {integrity: sha512-F2+rO2niz4Gcif1zmKpk/mvz9FYkKTWitORZhaCCMF1pL7Ui5Uqs03wfh/eeAxvdojD3fDBrwwAtZzTCKVl9aA==}
     engines: {node: ^12 || >=14}
     peerDependencies:
       ant-design-vue: 2.2.8
@@ -1489,13 +1489,13 @@ packages:
     dependencies:
       '@ant-design/colors': 6.0.0
       ant-design-vue: registry.npmmirror.com/ant-design-vue/2.2.8_4f726de02e89ff745196f225ebb1bbcf
-      fe-ent-core: 1.2.18_0d46f552b0d512b2153b875288393084
+      fe-ent-core: 1.2.20_b0d6fa63c906b654feefa953770a6a71
       vditor: 3.8.12
       vue: registry.npmmirror.com/vue/3.2.31
     dev: false
 
-  /@fe-ent-extension/qrcode/1.2.18_c461e15fb6870f381699ce7d89822fdd:
-    resolution: {integrity: sha512-IERVIcheFb2l1yKZxV9JB0hC97Z0roeSmBCAjO9GhuQNV3ynkitgjR94+hhfw9huazvz8FH0aPrK4rM7b2gIQA==}
+  /@fe-ent-extension/qrcode/1.2.20_07157c69b4d014a1d77da071f8bfb240:
+    resolution: {integrity: sha512-R/wsYwvqWfR+rHszs5/KJVFx73x+/f3bsUs88wkkfuVWu6Fl5XUODg3/6d9A3cPuYi2qq/xuzGzWr/1WiDHlpw==}
     engines: {node: ^12 || >=14}
     peerDependencies:
       ant-design-vue: 2.2.8
@@ -1505,14 +1505,14 @@ packages:
     dependencies:
       '@ant-design/colors': 6.0.0
       ant-design-vue: registry.npmmirror.com/ant-design-vue/2.2.8_4f726de02e89ff745196f225ebb1bbcf
-      fe-ent-core: 1.2.18_0d46f552b0d512b2153b875288393084
+      fe-ent-core: 1.2.20_b0d6fa63c906b654feefa953770a6a71
       lodash: 4.17.21
       qrcode: 1.5.0
       vue: registry.npmmirror.com/vue/3.2.31
     dev: false
 
-  /@fe-ent-extension/tinymce/1.2.18_2320054a0f7d2febd2768c8b1d831f76:
-    resolution: {integrity: sha512-AVwGY4IEqO4NbCmYj6D6z56R9Rwko/FjrOfQT/xUaeBjGv+CFIJiid3HGPk+tfkGGkFSWTiZvbBUF7rsgRdumg==}
+  /@fe-ent-extension/tinymce/1.2.20_b079859d194259e56b4293f7e573ff96:
+    resolution: {integrity: sha512-BpYGApwVHsG2kRLC0IPkXB7Ia1wTeGpd7EMw9JdRkq6ZKWs01dlEGY0oo7iAKoi9B/AXHO+GgVbZST/CTc3sKA==}
     engines: {node: ^12 || >=14}
     peerDependencies:
       ant-design-vue: 2.2.8
@@ -1521,7 +1521,7 @@ packages:
     dependencies:
       '@ant-design/colors': 6.0.0
       ant-design-vue: registry.npmmirror.com/ant-design-vue/2.2.8_4f726de02e89ff745196f225ebb1bbcf
-      fe-ent-core: 1.2.18_0d46f552b0d512b2153b875288393084
+      fe-ent-core: 1.2.20_b0d6fa63c906b654feefa953770a6a71
       tinymce: 5.10.3
       vue: registry.npmmirror.com/vue/3.2.31
     dev: false
@@ -4244,8 +4244,8 @@ packages:
       pend: 1.2.0
     dev: true
 
-  /fe-ent-build/1.2.18_822394d78e7b7688cd823028fe0837d1:
-    resolution: {integrity: sha512-SmgqepkJKvxvVWLcsZPU0Ttm59EQdKy7OLEE8Uula4610Td55c6driFIJH6XRzsH93Pj9uq2vfeXFyYYCMkQ+Q==}
+  /fe-ent-build/1.2.20_25871f4b58e7cc0031fe5aedb004b392:
+    resolution: {integrity: sha512-4+oiNIN0jBXdXVsccxiVJ0dOmtV7pAC5jeqnwgiX/N3tQ7u421fyYRRdXLzJNEqZK2k9BJ3ifpXk8Im2mRXlug==}
     peerDependencies:
       ant-design-vue: 2.2.8
       vite-plugin-ent-theme: ^1.0.1
@@ -4273,7 +4273,7 @@ packages:
       rollup-plugin-visualizer: 5.6.0_rollup@2.67.0
       vite: 2.8.6
       vite-plugin-compression: 0.3.5_vite@2.8.6
-      vite-plugin-ent-theme: 1.2.18_vite@2.8.6
+      vite-plugin-ent-theme: 1.2.20_vite@2.8.6
       vite-plugin-html: 2.1.1_vite@2.8.6
       vite-plugin-imagemin: 0.4.6_vite@2.8.6
       vite-plugin-mock: 2.9.6_886ec695566912f68a6249cf076d66eb
@@ -4299,8 +4299,8 @@ packages:
       - vue
     dev: true
 
-  /fe-ent-core/1.2.18_0d46f552b0d512b2153b875288393084:
-    resolution: {integrity: sha512-D6/3QNiz1Q3YfWx995d3T9NueiXWYyHYttezvvQOeUgnDFr2akIty6is5rLP1hjT0jU1Y1mg6yNfdDd6aI8M3Q==}
+  /fe-ent-core/1.2.20_b0d6fa63c906b654feefa953770a6a71:
+    resolution: {integrity: sha512-MHszIjBijZ0ODjLunvwjQEeB3vfIeXwlkBeRCO662+VdYb+BvENVWk9YL1kXauopecA0VcxBBC5p4Jx4F6EiYQ==}
     engines: {node: ^12 || >=14}
     peerDependencies:
       ant-design-vue: 2.2.8
@@ -4318,7 +4318,7 @@ packages:
       cropperjs: 1.5.12
       crypto-js: 4.1.1
       dayjs: 1.10.8
-      fe-ent-theme-api: 1.2.18_vite@2.8.6
+      fe-ent-theme-api: 1.2.20_vite@2.8.6
       intro.js: 4.3.0
       lodash: 4.17.21
       mockjs: 1.1.0
@@ -4344,8 +4344,8 @@ packages:
       - typescript
     dev: false
 
-  /fe-ent-theme-api/1.2.18_vite@2.8.6:
-    resolution: {integrity: sha512-CZZ6l8NY5AiXfeJtRZeiS9pzn5WLB+DwO+yLuyKw2hZEYlChCtNDgvzntSODmHgfpKgq+zuX0P+NTQDhC8UUYw==}
+  /fe-ent-theme-api/1.2.20_vite@2.8.6:
+    resolution: {integrity: sha512-2qzdvA01rCrxasWr0Dc4e5S7Em2RkXEtMC6MSZxkKS6o1H2U7pIOAgeX7f0palCCyM3ykzd4cWkSYaLIR72VUg==}
     peerDependencies:
       vite: '>=2.8.6'
     dependencies:
@@ -8371,8 +8371,8 @@ packages:
       - supports-color
     dev: true
 
-  /vite-plugin-ent-theme/1.2.18_vite@2.8.6:
-    resolution: {integrity: sha512-eHQoyQ81KMRUxt8geC6iwtwPju0hOlAbhwMgiBS7it6brs6fOT+TKGjgFbIyXPVt5hyfVH/lZAu2WuEJhxCNZw==}
+  /vite-plugin-ent-theme/1.2.20_vite@2.8.6:
+    resolution: {integrity: sha512-DiI2KJhKMJ948kgT8gjceYER0F4mTNGtsXrm81q5XDfwgSYpry1diiBMLdEkbwucJ8fIge14sH7J1IoSZ8gfDg==}
     peerDependencies:
       vite: '>=2.8.6'
     dependencies:

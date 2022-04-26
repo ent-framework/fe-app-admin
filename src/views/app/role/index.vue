@@ -81,6 +81,7 @@
           labelWidth: 120,
           schemas: searchFormSchema,
         },
+        rowKey: 'roleId',
         useSearchForm: true,
         showTableSetting: true,
         bordered: true,

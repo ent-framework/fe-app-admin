@@ -46,6 +46,7 @@
         title: '应用列表',
         api: getAppPage,
         columns,
+        rowKey: 'appId',
         formConfig: {
           labelWidth: 120,
           schemas: searchFormSchema,

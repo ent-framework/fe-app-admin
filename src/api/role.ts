@@ -9,53 +9,74 @@ import {
 } from '../model/role-model';
 import { defHttp } from 'fe-ent-core/lib/utils/http/axios';
 import { CheckKeys } from 'fe-ent-core/lib/components/tree';
-enum Api {
-  RolePageList = '/sys-role/page',
-  GetAllRoleList = '/sys-role/list',
-  setRoleStatus = '/sys-role/update-status',
-  RoleCreate = '/sys-role/add',
-  RoleUpdate = '/sys-role/update',
-  GrantMenu = '/sys-role/grant-menu',
-  RoleMenuList = '/sys-role/get-role-menus',
-  GrantDataScope = '/sys-role/grant-data-scope',
-  GetRoleDataScope = '/sys-role/get-role-data-scope',
-  RoleResourceTree = '/sys-role/get-resource-tree',
-  RoleSelectedResource = '/sys-role/get-selected-resource',
-  GrantRoleResource = '/sys-role/grant-resource',
-}
 
 export const getRoleListByPage = (params?: RolePageParams) =>
-  defHttp.get<RolePageListGetResultModel>({ url: Api.RolePageList, params });
+  defHttp.get<RolePageListGetResultModel>({
+    url: `${import.meta.env.VITE_ADMIN_API_PREFIX || ''}/sys-role/page`,
+    params,
+  });
 
 export const getAllRoleList = (params?: RoleParams) =>
-  defHttp.get<RoleListGetResultModel>({ url: Api.GetAllRoleList, params });
+  defHttp.get<RoleListGetResultModel>({
+    url: `${import.meta.env.VITE_ADMIN_API_PREFIX || ''}/sys-role/list`,
+    params,
+  });
 
 export const updateRoleStatus = (data: RoleParams) =>
-  defHttp.post({ url: Api.setRoleStatus, data });
+  defHttp.post({
+    url: `${import.meta.env.VITE_ADMIN_API_PREFIX || ''}/sys-role/update-status`,
+    data,
+  });
 
 export const saveOrUpdateRole = (data: RoleModel) => {
   if (data.roleId && data.roleId > 0) {
-    return defHttp.post<void>({ url: Api.RoleUpdate, data });
+    return defHttp.post<void>({
+      url: `${import.meta.env.VITE_ADMIN_API_PREFIX || ''}/sys-role/update`,
+      data,
+    });
   } else {
-    return defHttp.post<void>({ url: Api.RoleCreate, data });
+    return defHttp.post<void>({
+      url: `${import.meta.env.VITE_ADMIN_API_PREFIX || ''}/sys-role/add`,
+      data,
+    });
   }
 };
 
-export const grantMenu = (data: GrantMenuRoleParams) => defHttp.post({ url: Api.GrantMenu, data });
+export const grantMenu = (data: GrantMenuRoleParams) =>
+  defHttp.post({ url: `${import.meta.env.VITE_ADMIN_API_PREFIX || ''}/sys-role/grant-menu`, data });
 
-export const grantDataScope = (data: RoleParams) => defHttp.post({ url: Api.GrantDataScope, data });
+export const grantDataScope = (data: RoleParams) =>
+  defHttp.post({
+    url: `${import.meta.env.VITE_ADMIN_API_PREFIX || ''}/sys-role/grant-data-scope`,
+    data,
+  });
 
 export const getRoleMenus = (params?: any) =>
-  defHttp.get<CheckKeys>({ url: Api.RoleMenuList, params });
+  defHttp.get<CheckKeys>({
+    url: `${import.meta.env.VITE_ADMIN_API_PREFIX || ''}/sys-role/get-role-menus`,
+    params,
+  });
 
 export const getRoleDataScopes = (params?: any) =>
-  defHttp.get<RolePageListGetResultModel>({ url: Api.GetRoleDataScope, params });
+  defHttp.get<RolePageListGetResultModel>({
+    url: `${import.meta.env.VITE_ADMIN_API_PREFIX || ''}/sys-role/get-role-data-scope`,
+    params,
+  });
 
 export const getRoleResourceTree = (params?: GrantMenuResourceParams) =>
-  defHttp.get<RolePageListGetResultModel>({ url: Api.RoleResourceTree, params });
+  defHttp.get<RolePageListGetResultModel>({
+    url: `${import.meta.env.VITE_ADMIN_API_PREFIX || ''}/sys-role/get-resource-tree`,
+    params,
+  });
 
 export const getRoleSelectedResource = (params?: GrantMenuResourceParams) =>
-  defHttp.get<RolePageListGetResultModel>({ url: Api.RoleSelectedResource, params });
+  defHttp.get<RolePageListGetResultModel>({
+    url: `${import.meta.env.VITE_ADMIN_API_PREFIX || ''}/sys-role/get-selected-resource`,
+    params,
+  });
 
 export const grantRoleResource = (params?: GrantMenuResourceParams) =>
-  defHttp.post<void>({ url: Api.GrantRoleResource, params });
+  defHttp.post<void>({
+    url: `${import.meta.env.VITE_ADMIN_API_PREFIX || ''}/sys-role/grant-resource`,
+    params,
+  });

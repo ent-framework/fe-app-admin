@@ -57,7 +57,7 @@
       const [registerTable, { reload, updateTableDataRecord }] = useTable({
         title: '账号列表',
         api: getUserPage,
-        rowKey: 'id',
+        rowKey: 'userId',
         columns,
         formConfig: {
           labelWidth: 120,

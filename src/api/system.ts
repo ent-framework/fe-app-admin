@@ -1,53 +1,62 @@
-import {
-  AccountListGetResultModel,
-} from '../model/system-model';
+import { AccountListGetResultModel } from '../model/system-model';
 import { defHttp } from 'fe-ent-core/lib/utils/http/axios';
 
-enum Api {
-  SysConfigGroupPage = '/dict/get-config-group-page',
-  LanguageGroupPage = '/dict/get-languages-page',
-  SysConfigPage = '/sys-config/page',
-  DictTypePage = '/dict-type/page',
-  DictPage = '/dict/page',
-  LanguagePage = '/i18n/page',
-  LanguageCreate = '/i18n/create',
-  OnlineUserList = '/sys-user/online-user-list',
-  RemoveSession = '/sys-user/remove-session',
-  LoginLogsPage = '/login-log/page',
-  LoginLogsDetail = '/login-log/detail',
-  LoginLogsDeleteAll = '/login-log/delete-all',
-  LogsPage = '/log-manager/page',
-  LogsList = '/log-manager/list',
-  LogsDetail = '/log-manager/detail',
-  LogsRemove = '/log-manager/remove',
-}
-
 export const getSysConfigGroupPage = (params: any) =>
-  defHttp.get<AccountListGetResultModel>({ url: Api.SysConfigGroupPage, params });
+  defHttp.get<AccountListGetResultModel>({
+    url: `${import.meta.env.VITE_ADMIN_API_PREFIX || ''}/dict/get-config-group-page`,
+    params,
+  });
 
 export const getLanguageGroupPage = (params: any) =>
-  defHttp.get<AccountListGetResultModel>({ url: Api.LanguageGroupPage, params });
+  defHttp.get<AccountListGetResultModel>({
+    url: `${import.meta.env.VITE_ADMIN_API_PREFIX || ''}/dict/get-languages-page`,
+    params,
+  });
 
 export const getSysConfigPage = (params: any) =>
-  defHttp.get<AccountListGetResultModel>({ url: Api.SysConfigPage, params });
+  defHttp.get<AccountListGetResultModel>({
+    url: `${import.meta.env.VITE_ADMIN_API_PREFIX || ''}/sys-config/page`,
+    params,
+  });
 
 export const getDictTypePage = (params: any) =>
-  defHttp.get<AccountListGetResultModel>({ url: Api.DictTypePage, params });
+  defHttp.get<AccountListGetResultModel>({
+    url: `${import.meta.env.VITE_ADMIN_API_PREFIX || ''}/dict-type/page`,
+    params,
+  });
 
 export const getDictPage = (params: any) =>
-  defHttp.get<AccountListGetResultModel>({ url: Api.DictPage, params });
+  defHttp.get<AccountListGetResultModel>({
+    url: `${import.meta.env.VITE_ADMIN_API_PREFIX || ''}/dict/page`,
+    params,
+  });
 
 export const getLanguagePage = (params: any) =>
-  defHttp.get<AccountListGetResultModel>({ url: Api.LanguagePage, params });
+  defHttp.get<AccountListGetResultModel>({
+    url: `${import.meta.env.VITE_ADMIN_API_PREFIX || ''}/i18n/page`,
+    params,
+  });
 
 export const getOnlineUserList = (params: any) =>
-  defHttp.get<AccountListGetResultModel>({ url: Api.OnlineUserList, params });
+  defHttp.get<AccountListGetResultModel>({
+    url: `${import.meta.env.VITE_ADMIN_API_PREFIX || ''}/sys-user/online-user-list`,
+    params,
+  });
 
 export const removeSession = (params: any) =>
-  defHttp.post<AccountListGetResultModel>({ url: Api.RemoveSession, params });
+  defHttp.post<AccountListGetResultModel>({
+    url: `${import.meta.env.VITE_ADMIN_API_PREFIX || ''}/sys-user/remove-session`,
+    params,
+  });
 
 export const getLoginLogsPage = (params: any) =>
-  defHttp.get<AccountListGetResultModel>({ url: Api.LoginLogsPage, params });
+  defHttp.get<AccountListGetResultModel>({
+    url: `${import.meta.env.VITE_ADMIN_API_PREFIX || ''}/login-log/page`,
+    params,
+  });
 
 export const getLogsPage = (params: any) =>
-  defHttp.get<AccountListGetResultModel>({ url: Api.LogsPage, params });
+  defHttp.get<AccountListGetResultModel>({
+    url: `${import.meta.env.VITE_ADMIN_API_PREFIX || ''}/log-manager/page`,
+    params,
+  });

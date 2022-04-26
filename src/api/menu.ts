@@ -6,26 +6,29 @@ import {
 } from '../model/menu-model';
 import { defHttp } from 'fe-ent-core/lib/utils/http/axios';
 
-enum Api {
-  MenuList = '/sys-menu/list',
-  MenuCreate = '/sys-menu/add',
-  MenuUpdate = '/sys-menu/update',
-  MenuResourceTree = '/sys-menu/get-resource-tree',
-  MenuSelectedResource = '/sys-menu/get-select-resource',
-  MenuBindResource = '/sys-menu/bind-resource',
-}
-
 export const getMenuList = (params?: MenuParams) =>
-  defHttp.get<MenuListGetResultModel>({ url: Api.MenuList, params });
+  defHttp.get<MenuListGetResultModel>({
+    url: `${import.meta.env.VITE_ADMIN_API_PREFIX || ''}/sys-menu/list`,
+    params,
+  });
 
 export const getMenuResourceTree = (params?: MenuResourceParams) =>
-  defHttp.get<MenuListGetResultModel>({ url: Api.MenuResourceTree, params });
+  defHttp.get<MenuListGetResultModel>({
+    url: `${import.meta.env.VITE_ADMIN_API_PREFIX || ''}/sys-menu/get-resource-tree`,
+    params,
+  });
 
 export const getMenuSelectedResource = (params?: MenuResourceParams) =>
-  defHttp.get<MenuListGetResultModel>({ url: Api.MenuSelectedResource, params });
+  defHttp.get<MenuListGetResultModel>({
+    url: `${import.meta.env.VITE_ADMIN_API_PREFIX || ''}/sys-menu/get-select-resource`,
+    params,
+  });
 
 export const bindMenuResource = (params?: MenuParams) =>
-  defHttp.post<void>({ url: Api.MenuBindResource, params });
+  defHttp.post<void>({
+    url: `${import.meta.env.VITE_ADMIN_API_PREFIX || ''}/sys-menu/bind-resource`,
+    params,
+  });
 
 export const saveOrUpdateMenu = (data: MenuModel) => {
   console.log(data);
@@ -33,8 +36,14 @@ export const saveOrUpdateMenu = (data: MenuModel) => {
     data.menuParentId = -1;
   }
   if (data.menuId && data.menuId > 0) {
-    return defHttp.post<void>({ url: Api.MenuUpdate, data });
+    return defHttp.post<void>({
+      url: `${import.meta.env.VITE_ADMIN_API_PREFIX || ''}/sys-menu/update`,
+      data,
+    });
   } else {
-    return defHttp.post<void>({ url: Api.MenuCreate, data });
+    return defHttp.post<void>({
+      url: `${import.meta.env.VITE_ADMIN_API_PREFIX || ''}/sys-menu/add`,
+      data,
+    });
   }
 };
