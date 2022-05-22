@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE generatorConfiguration
   PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
-  "https://mybatis.org/dtd/mybatis-generator-config_1_0.dtd"
+  "https://mybatis-generator.oss-cn-shanghai.aliyuncs.com/mybatis-generator-config_1_0.dtd"
   >
 
 <!--Mybatis Generator配置文件-->
@@ -21,9 +21,7 @@
     <!--指定需要使用的plugin, LombokAnnotationPlugin用于生成lombok注解, -->
     <!--plugin之间存在顺序关系, 为了生成代码的美观, 建议将SerializablePlugin放到最后-->
     <!-- 字段添加JavaDoc -->
-    <plugin type="com.accenture.abg.coe.kernel.db.generator.plugin.FieldDynamicSQLPlugin"/>
-    <!-- JoinMethodPlugin用于生成关联关系 需要在 ds-generator-config.xml 中配置关联关系 -->
-    <plugin type="com.accenture.abg.coe.kernel.db.generator.plugin.JoinMethodPlugin"/>
+    <plugin type="com.accenture.abg.coe.kernel.db.generator.plugin.MyBatisExtPlugin"/>
 
     <!-- 状态枚举生成插件 -->
     <plugin type="com.accenture.abg.coe.kernel.db.generator.plugin.EnumTypeStatusPlugin">
@@ -42,6 +40,7 @@
     <!-- 生成API接口 -->
     <plugin type="com.accenture.abg.coe.kernel.db.generator.plugin.web.TemplateModelViewPlugin">
       <property name="writeMode" value="OVER_WRITE"/>
+      <property name="enableSubPackages" value="false"/>
       <property name="targetPackage" value="generated.api"/>
       <property name="templatePath" value="plugin/web/api.ftl"/>
       <property name="fileName" value="%s" />
@@ -52,7 +51,6 @@
     <plugin type="com.accenture.abg.coe.kernel.db.generator.plugin.web.TemplateModelViewPlugin">
       <property name="writeMode" value="OVER_WRITE"/>
       <property name="targetPackage" value="views.generated"/>
-      <property name="enableSubPackages" value="true"/>
       <property name="templatePath" value="plugin/web/list.ftl"/>
       <property name="fileName" value="%s.list" />
       <property name="fileExt" value=".vue"/>
@@ -62,7 +60,6 @@
     <plugin type="com.accenture.abg.coe.kernel.db.generator.plugin.web.TemplateModelViewPlugin">
       <property name="writeMode" value="OVER_WRITE"/>
       <property name="targetPackage" value="views.generated"/>
-      <property name="enableSubPackages" value="true"/>
       <property name="templatePath" value="plugin/web/detail.ftl"/>
       <property name="fileName" value="%s.detail" />
       <property name="fileExt" value=".vue"/>
@@ -101,7 +98,7 @@
     />
 
     <!--指定java类型处理器, 如果有自定义的类型, 需要进行指定-->
-    <javaTypeResolver type="com.accenture.abg.coe.kernel.db.generator.resolver.JavaTypeCustomResolver">
+    <javaTypeResolver>
       <property name="forceBigDecimals" value="false"/>
       <property name="useJSR310Types" value="true"/>
     </javaTypeResolver>
@@ -130,8 +127,8 @@
       <domainObjectRenamingRule searchString="^Exam" replaceString=""/>
       <!--指定create_time和last_update_time不用生成到插入语句和更新语句当中, 这样在我们插入和更新的时候会忽略这两个字段,
       因为这两个字段我们希望数据库自动处理(而不是程序处理): create_time在创建的时候自动填入数值, 而last_update_time在每次更新的时候自动更新数值-->
-      <columnOverride column="create_time" isGeneratedAlways="true"/>
-      <columnOverride column="update_time" isGeneratedAlways="true"/>
+<!--      <columnOverride column="create_time" isGeneratedAlways="true"/>
+      <columnOverride column="update_time" isGeneratedAlways="true"/>-->
     </table>
 
   </context>

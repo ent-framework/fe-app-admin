@@ -7,7 +7,7 @@
     "url": "https://github.com/anncwb"
   },
   "scripts": {
-    "dev": "vite --debug",
+    "dev": "vite",
     "build": "cross-env NODE_ENV=production vite build",
     "build:test": "cross-env vite build --mode test && esno ./build/script/postBuild.ts",
     "build:no-cache": "yarn clean:cache && npm run build",

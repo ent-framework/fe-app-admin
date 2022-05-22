@@ -51,12 +51,12 @@ export const removeSession = (params: any) =>
 
 export const getLoginLogsPage = (params: any) =>
   defHttp.get<AccountListGetResultModel>({
-    url: `${import.meta.env.VITE_ADMIN_API_PREFIX || ''}/login-log/page`,
+    url: `${import.meta.env.VITE_MISC_API_PREFIX || ''}/login-log/page`,
     params,
   });
 
 export const getLogsPage = (params: any) =>
   defHttp.get<AccountListGetResultModel>({
-    url: `${import.meta.env.VITE_ADMIN_API_PREFIX || ''}/log-manager/page`,
+    url: `${import.meta.env.VITE_MISC_API_PREFIX || ''}/log-manager/page`,
     params,
   });

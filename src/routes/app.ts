@@ -2,7 +2,7 @@ import type { AppRouteModule } from 'fe-ent-core/lib/router/types';
 
 import { default as LAYOUT } from 'fe-ent-core/lib/layouts/default';
 
-const permission: AppRouteModule = {
+const app: AppRouteModule = {
   path: '/app',
   name: 'Permission',
   component: LAYOUT,
@@ -48,4 +48,4 @@ const permission: AppRouteModule = {
   ],
 };
 
-export default permission;
+export default app;

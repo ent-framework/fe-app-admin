@@ -62,7 +62,8 @@ async function bootstrap() {
   const router = setupRouter(app);
   router.addBasicRoutes(getBasicRoutes());
   router.addExtraRoutes(import.meta.globEager(`/src/routes/*.ts`));
-  importMenuModules(import.meta.globEager('./routes/*.ts'));
+  console.log(import.meta.globEager('/src/routes/*.ts'));
+  importMenuModules(import.meta.globEager('/src/routes/*.ts'));
   // router-guard
   setupRouterGuard(router);
 

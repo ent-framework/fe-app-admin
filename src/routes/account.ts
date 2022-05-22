@@ -3,7 +3,7 @@ import type { AppRouteModule } from 'fe-ent-core/lib/router/types';
 import { default as LAYOUT } from 'fe-ent-core/lib/layouts/default';
 import { t } from 'fe-ent-core/lib/hooks/web/use-i18n';
 
-const user: AppRouteModule = {
+const account: AppRouteModule = {
   path: '/account',
   name: 'User',
   component: LAYOUT,
@@ -56,4 +56,4 @@ const user: AppRouteModule = {
   ],
 };
 
-export default user;
+export default account;

@@ -3,7 +3,7 @@ import { defHttp } from 'fe-ent-core/lib/utils/http/axios';
 
 export const getResourcePageList = (params?: ResourcePageParams) =>
   defHttp.get<ResourcePageListGetResultModel>({
-    url: `${import.meta.env.VITE_ADMIN_API_PREFIX || ''}/resource/list`,
+    url: `${import.meta.env.VITE_ADMIN_API_PREFIX || ''}/resource/page`,
     params,
   });
 

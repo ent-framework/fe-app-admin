@@ -2,11 +2,11 @@ import type { AppRouteModule } from 'fe-ent-core/lib/router/types';
 
 import { default as LAYOUT } from 'fe-ent-core/lib/layouts/default';
 
-const dashboard: AppRouteModule = {
+const basic: AppRouteModule = {
   path: '/basic',
   name: 'BaseData',
   component: LAYOUT,
-  redirect: '/basic/config',
+  redirect: '/basic2/config',
   meta: {
     icon: 'simple-icons:about-dot-me',
     title: '基础数据',
@@ -43,4 +43,4 @@ const dashboard: AppRouteModule = {
   ],
 };
 
-export default dashboard;
+export default basic;

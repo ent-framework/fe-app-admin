@@ -41,10 +41,16 @@ export const columns: BasicColumn[] = [
 
 export const searchFormSchema: FormSchema[] = [
   {
+    field: 'appCode',
+    label: '应用编码',
+    component: 'Input',
+    colProps: { span: 6 },
+  },
+  {
     field: 'resourceName',
     label: '资源名称',
     component: 'Input',
-    colProps: { span: 8 },
+    colProps: { span: 6 },
   },
   {
     field: 'status',
@@ -56,7 +62,7 @@ export const searchFormSchema: FormSchema[] = [
         { label: '停用', value: '1' },
       ],
     },
-    colProps: { span: 8 },
+    colProps: { span: 6 },
   },
 ];
 
