@@ -16,7 +16,7 @@
   import { formSchema } from './history-score.data';
   import { EntDrawer, useDrawerInner } from 'fe-ent-core/lib/components/drawer';
   import { useMessage } from 'fe-ent-core/lib/hooks/web/use-message';
-  import { CreateHistoryScore, UpdateHistoryScore } from '/@/generated/api/history-score';
+  import { HistoryScoreCreate, HistoryScoreUpdate } from '/@/generated/api/history-score';
 
   export default defineComponent({
     name: 'HistoryScoreDrawer',
@@ -68,7 +68,7 @@
           const values = await validate();
           setDrawerProps({ confirmLoading: true });
           if (unref(mode) == 'u') {
-            UpdateHistoryScore({ ...values, id: id.value })
+            HistoryScoreUpdate({ ...values, id: id.value })
               .then(() => {
                 createMessage.success(`保存成功`);
                 closeDrawer();
@@ -76,7 +76,7 @@
               })
               .catch();
           } else if (unref(mode) == 'c') {
-            CreateHistoryScore({ ...values, id: null })
+            HistoryScoreCreate({ ...values, id: null })
               .then(() => {
                 createMessage.success(`保存成功`);
                 closeDrawer();

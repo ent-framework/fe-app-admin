@@ -2,7 +2,7 @@
   <div>
     <EntTable @register="registerTable" @fetch-success="onFetchSuccess">
       <template #toolbar>
-        <a-button type="primary" @click="handleCreate"> 新增组织 </a-button>
+        <a-button type="primary" @click="handleCreate"> 新增部门 </a-button>
       </template>
       <template #action="{ record }">
         <EntTableAction
@@ -43,7 +43,7 @@
     setup() {
       const [registerDrawer, { openDrawer }] = useDrawer();
       const [registerTable, { reload, expandAll }] = useTable({
-        title: '组织列表',
+        title: '部门列表',
         api: getOrgList,
         columns,
         formConfig: {

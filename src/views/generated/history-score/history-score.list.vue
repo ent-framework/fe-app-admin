@@ -62,7 +62,7 @@
   import { defineComponent, reactive, ref } from 'vue';
 
   import { EntTable, useTable, EntTableAction } from 'fe-ent-core/lib/components/table';
-  import { PageQueryHistoryScore, DeleteHistoryScore, BatchDeleteHistoryScore } from '/@/generated/api/history-score';
+  import { HistoryScorePage, HistoryScoreDeleteById, HistoryScoreBatchDelete } from '/@/generated/api/history-score';
   import { useDrawer } from 'fe-ent-core/lib/components/drawer';
   import HistoryScoreDrawer from './history-score.detail.vue';
 
@@ -80,7 +80,7 @@
       const searchInfo = reactive<Recordable>({});
       const [registerTable, { reload }] = useTable({
         title: '考试记录列表',
-        api: PageQueryHistoryScore,
+        api: HistoryScorePage,
         rowKey: 'id',
         columns,
         formConfig: {
@@ -110,7 +110,6 @@
       }
 
       function handleEdit(record: Recordable) {
-        console.log(record);
         openDrawer(true, {
           record,
           edit_mode: 'u',
@@ -118,7 +117,7 @@
       }
 
       function handleDelete(record: Recordable) {
-        DeleteHistoryScore(record).then(() => {
+        HistoryScoreDeleteById(record).then(() => {
           createMessage.success(`删除成功`);
           reload();
         });
@@ -142,7 +141,7 @@
 
       function handleBatchDelete() {
         const records = { ids: checkedKeys.value };
-        BatchDeleteHistoryScore(records).then(() => {
+        HistoryScoreBatchDelete(records).then(() => {
           createMessage.success(`删除成功`);
           checkedKeys.value = [];
           reload();

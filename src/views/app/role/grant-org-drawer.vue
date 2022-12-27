@@ -33,7 +33,7 @@
   import { getOrgTree } from '/@/api/org';
 
   export default defineComponent({
-    name: 'RoleDrawer',
+    name: 'GrantOrgDrawer',
     components: { EntDrawer, EntForm, BasicTree },
     emits: ['success', 'register'],
     setup(_, { emit }) {

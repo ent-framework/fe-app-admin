@@ -1,4 +1,9 @@
-import { UserParams, UserModel, UserListGetResultModel } from '../model/user-model';
+import {
+  UserParams,
+  UserModel,
+  UserListGetResultModel,
+  UserGrantRoleModel,
+} from '../model/user-model';
 import { defHttp } from 'fe-ent-core/lib/utils/http/axios';
 
 export const getUserPage = (params: UserParams) =>
@@ -27,9 +32,21 @@ export const saveOrUpdateUser = (data: UserModel) => {
   }
 };
 
-export const deleteUser = (data: UserModel) => {
+export const deleteUser = (data: any) => {
   return defHttp.post<void>({
     url: `${import.meta.env.VITE_ADMIN_API_PREFIX || ''}/sys-user/delete`,
     data,
   });
 };
+
+export const grantRole = (params?: UserGrantRoleModel) =>
+  defHttp.post<void>({
+    url: `${import.meta.env.VITE_ADMIN_API_PREFIX || ''}/sys-user/grant-role`,
+    params,
+  });
+
+export const getUserRoles = (params?: UserModel): Recordable =>
+  defHttp.get<void>({
+    url: `${import.meta.env.VITE_ADMIN_API_PREFIX || ''}/sys-user/get-user-roles`,
+    params,
+  });

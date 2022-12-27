@@ -16,9 +16,9 @@ export const getRoleListByPage = (params?: RolePageParams) =>
     params,
   });
 
-export const getAllRoleList = (params?: RoleParams) =>
+export const getRoleDropdown = (params?: RoleParams) =>
   defHttp.get<RoleListGetResultModel>({
-    url: `${import.meta.env.VITE_ADMIN_API_PREFIX || ''}/sys-role/list`,
+    url: `${import.meta.env.VITE_ADMIN_API_PREFIX || ''}/sys-role/drop-down`,
     params,
   });
 

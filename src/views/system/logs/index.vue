@@ -32,34 +32,33 @@
   import { useMessage } from 'fe-ent-core/lib/hooks/web/use-message';
   export const columns: BasicColumn[] = [
     {
-      title: '登录姓名',
-      dataIndex: 'userName',
+      title: '应用',
+      dataIndex: 'appName',
+      width: 50,
+    },
+    {
+      title: '操作人账号',
+      dataIndex: 'createUserName',
       width: 50,
     },
     {
       title: 'IP',
-      dataIndex: 'llgIpAddress',
-      width: 100,
+      dataIndex: 'clientIp',
+      width: 50,
     },
     {
-      title: '登录时间',
+      title: '发生时间',
       dataIndex: 'createTime',
-      width: 180,
+      width: 100,
     },
     {
       title: '日志名称',
-      dataIndex: 'llgName',
-      width: 100,
-      align: 'left',
-    },
-    {
-      title: '是否成功',
-      dataIndex: 'llgSucceed',
+      dataIndex: 'logName',
       width: 100,
     },
     {
-      title: '消息',
-      dataIndex: 'llgMessage',
+      title: '请求地址',
+      dataIndex: 'requestUrl',
       width: 100,
     },
   ];

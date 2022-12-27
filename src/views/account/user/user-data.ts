@@ -4,8 +4,9 @@ import { getOrgTree } from '/@/api/org';
 import { h } from 'vue';
 import { Switch } from 'ant-design-vue';
 import { useMessage } from 'fe-ent-core/lib/hooks/web/use-message';
-import { updateRoleStatus } from '/@/api/role';
+import { updateUserStatus } from '/@/api/user';
 import { getPositionList } from '/@/api/position';
+import { getRoleDropdown } from '/@/api/role';
 
 export const columns: BasicColumn[] = [
   {
@@ -20,8 +21,25 @@ export const columns: BasicColumn[] = [
     width: 120,
   },
   {
+    title: '部门',
+    dataIndex: 'organization.orgName',
+    customRender: ({ record }) => {
+      if (record.organization) {
+        return record.organization.orgName;
+      }
+      return '';
+    },
+    width: 120,
+  },
+  {
     title: '职位',
-    dataIndex: 'positionName',
+    dataIndex: 'position.positionName',
+    customRender: ({ record }) => {
+      if (record.position) {
+        return record.position.positionName;
+      }
+      return '';
+    },
     width: 120,
   },
   {
@@ -44,15 +62,15 @@ export const columns: BasicColumn[] = [
         loading: record.pendingStatus,
         onChange(checked: boolean) {
           record.pendingStatus = true;
-          const newStatus = checked ? 1 : 0;
+          const newStatus = checked ? 1 : 2;
           const { createMessage } = useMessage();
-          updateRoleStatus({ ...record, statusFlag: newStatus })
+          updateUserStatus({ ...record, statusFlag: newStatus })
             .then(() => {
               record.statusFlag = newStatus;
-              createMessage.success(`已成功修改角色状态`);
+              createMessage.success(`已成功修改用户状态`);
             })
             .catch(() => {
-              createMessage.error('修改角色状态失败');
+              createMessage.error('修改用户状态失败');
             })
             .finally(() => {
               record.pendingStatus = false;
@@ -112,8 +130,9 @@ export const accountFormSchema: FormSchema[] = [
     field: 'birthday',
     label: '生日',
     component: 'DatePicker',
-    required: true,
-    ifShow: false,
+    componentProps: {
+      valueFormat: 'YYYY-MM-DD',
+    },
   },
   {
     field: 'sex',
@@ -147,7 +166,7 @@ export const accountFormSchema: FormSchema[] = [
     component: 'ApiTreeSelect',
     componentProps: {
       api: getOrgTree,
-      resultField: 'items',
+      getPopupContainer: () => document.body,
     },
     required: true,
   },
@@ -157,19 +176,38 @@ export const accountFormSchema: FormSchema[] = [
     required: true,
     component: 'ApiSelect',
     componentProps: {
-      // more details see /src/components/Form/src/components/ApiSelect.vue
       api: getPositionList,
       // use name as label
       labelField: 'positionName',
       // use id as value
       valueField: 'positionId',
-      // not request untill to select
-      immediate: false,
     },
   },
   {
     label: '备注',
     field: 'remark',
     component: 'InputTextArea',
+  },
+];
+
+export const grantRoleFormSchema: FormSchema[] = [
+  {
+    field: 'account',
+    label: '用户名',
+    dynamicDisabled: true,
+    component: 'Input',
+  },
+  {
+    field: 'grantRoleIdList',
+    label: '角色',
+    component: 'ApiSelect',
+    componentProps: {
+      api: getRoleDropdown,
+      // use name as label
+      labelField: 'name',
+      // use id as value
+      valueField: 'id',
+      mode: 'multiple',
+    },
   },
 ];

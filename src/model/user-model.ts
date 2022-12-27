@@ -7,13 +7,18 @@ export type UserParams = BasicPageParams & {
 
 export interface UserModel {
   userId?: number;
-  User: string;
-  email: string;
-  nickname: string;
-  role: number;
-  createTime: string;
-  remark: string;
-  status: number;
+  User?: string;
+  email?: string;
+  nickname?: string;
+  role?: number;
+  createTime?: string;
+  remark?: string;
+  status?: number;
+}
+
+export interface UserGrantRoleModel {
+  userId?: string;
+  grantRoleIdList?: string[];
 }
 
 export type UserListGetResultModel = BasicFetchResult<UserModel>;

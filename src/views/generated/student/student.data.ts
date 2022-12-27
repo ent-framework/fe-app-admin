@@ -44,18 +44,28 @@ export const columns: BasicColumn[] = [
     width: 120,
   },
   {
-    title: '删除标记',
-    dataIndex: 'delFlag',
-    width: 120,
-  },
-  {
-    title: '版本',
-    dataIndex: 'version',
-    width: 120,
-  },
-  {
     title: '爱好',
     dataIndex: 'hobbies',
+    width: 120,
+  },
+  {
+    title: '创建人',
+    dataIndex: 'createUserName',
+    width: 120,
+  },
+  {
+    title: '创建时间',
+    dataIndex: 'createTime',
+    width: 120,
+  },
+  {
+    title: '更新人',
+    dataIndex: 'updateUserName',
+    width: 120,
+  },
+  {
+    title: '更新时间',
+    dataIndex: 'updateTime',
     width: 120,
   },
 ];
@@ -125,18 +135,6 @@ export const formSchema: FormSchema[] = [
     field: 'hometown',
     label: '籍贯',
     component: 'Input',
-    required: false,
-  },
-  {
-    field: 'delFlag',
-    label: '删除标记',
-    component: 'Input',
-    required: false,
-  },
-  {
-    field: 'version',
-    label: '版本',
-    component: 'InputNumber',
     required: false,
   },
   {

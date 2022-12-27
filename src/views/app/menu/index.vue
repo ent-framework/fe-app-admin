@@ -93,7 +93,6 @@
       }
 
       function handleBindRes(record: Recordable) {
-        console.log(record.menuType);
         const menuType = record.menuType;
         if (menuType != 2) {
           openResourceDrawer(true, {

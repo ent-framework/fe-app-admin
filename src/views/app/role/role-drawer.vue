@@ -7,28 +7,7 @@
     width="500px"
     @ok="handleSubmit"
   >
-    <EntForm @register="registerForm">
-      <template #menu="{ model, field }">
-        <BasicTree
-          v-model:value="model[field]"
-          :treeData="treeData"
-          :replaceFields="{ title: 'menuName', key: 'menuId' }"
-          checkable
-          toolbar
-          title="菜单分配"
-        />
-      </template>
-      <template #org="{ model, field }">
-        <BasicTree
-          v-model:value="model[field]"
-          :treeData="orgData"
-          :replaceFields="{ title: 'name', key: 'id' }"
-          checkable
-          toolbar
-          title="菜单分配"
-        />
-      </template>
-    </EntForm>
+    <EntForm @register="registerForm" />
   </EntDrawer>
 </template>
 <script lang="ts">
@@ -36,7 +15,7 @@
   import { EntForm, useForm } from 'fe-ent-core/lib/components/form';
   import { formSchema } from './role-data';
   import { EntDrawer, useDrawerInner } from 'fe-ent-core/lib/components/drawer';
-  import { BasicTree, TreeItem } from 'fe-ent-core/lib/components/tree';
+  import { TreeItem } from 'fe-ent-core/lib/components/tree';
   import { useMessage } from 'fe-ent-core/lib/hooks/web/use-message';
   import { saveOrUpdateRole } from '/@/api/role';
   import { getMenuList } from '/@/api/menu';
@@ -44,7 +23,7 @@
 
   export default defineComponent({
     name: 'RoleDrawer',
-    components: { EntDrawer, EntForm, BasicTree },
+    components: { EntDrawer, EntForm },
     emits: ['success', 'register'],
     setup(_, { emit }) {
       const isUpdate = ref(true);

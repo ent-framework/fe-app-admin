@@ -16,7 +16,7 @@
   import { formSchema } from './student.data';
   import { EntDrawer, useDrawerInner } from 'fe-ent-core/lib/components/drawer';
   import { useMessage } from 'fe-ent-core/lib/hooks/web/use-message';
-  import { CreateStudent, UpdateStudent } from '/@/generated/api/student';
+  import { StudentCreate, StudentUpdate } from '/@/generated/api/student';
 
   export default defineComponent({
     name: 'StudentDrawer',
@@ -68,7 +68,7 @@
           const values = await validate();
           setDrawerProps({ confirmLoading: true });
           if (unref(mode) == 'u') {
-            UpdateStudent({ ...values, id: id.value })
+            StudentUpdate({ ...values, id: id.value })
               .then(() => {
                 createMessage.success(`保存成功`);
                 closeDrawer();
@@ -76,7 +76,7 @@
               })
               .catch();
           } else if (unref(mode) == 'c') {
-            CreateStudent({ ...values, id: null })
+            StudentCreate({ ...values, id: null })
               .then(() => {
                 createMessage.success(`保存成功`);
                 closeDrawer();

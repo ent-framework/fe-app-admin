@@ -1,60 +1,69 @@
 import { BaseRequest } from '/@/generated/model/base-request';
-import { BaseResponse } from '/@/generated/model/base-response';
+import { BasicFetchResult } from 'fe-ent-core/lib/logics/model';
 
 /**
  * 学生 服务请求类
  */
-export interface StudentRequest extends BaseRequest {
+export interface Student extends BaseRequest {
+  /**
+   * Id
+   */
   id?: number;
 
+  /**
+   * 班级ID
+   */
   gradeId?: number;
 
+  /**
+   * 姓名
+   */
   name?: string;
 
+  /**
+   * 卡号
+   */
   cardNum?: string;
 
+  /**
+   * 性别[MALE(0):男,FEMALE(1):女]
+   */
   gender?: Gender;
 
+  /**
+   * 生日
+   */
   birthday?: string;
 
-  takeCourses?: string;
+  /**
+   * 学习课程
+   */
+  takeCourses?: string[];
 
+  /**
+   * 外国学生
+   */
   fromForeign?: boolean;
 
+  /**
+   * 籍贯
+   */
   hometown?: string;
 
-  delFlag?: string;
-
+  /**
+   * 版本
+   */
   version?: number;
 
+  /**
+   * 爱好
+   */
   hobbies?: string;
+
+  ids?: number[];
 }
 
-export interface StudentResponse extends BaseResponse {
-  id?: number;
-
-  gradeId?: number;
-
-  name?: string;
-
-  cardNum?: string;
-
-  gender?: Gender;
-
-  birthday?: string;
-
-  takeCourses?: string;
-
-  fromForeign?: boolean;
-
-  hometown?: string;
-
-  delFlag?: string;
-
-  version?: number;
-
-  hobbies?: string;
-}
+export type StudentPageModel = BasicFetchResult<Student>;
 
 export interface Gender {
   value?: string;

@@ -45,7 +45,7 @@
         }
       });
 
-      const getTitle = computed(() => (!unref(isUpdate) ? '新增组织' : '编辑组织'));
+      const getTitle = computed(() => (!unref(isUpdate) ? '新增部门' : '编辑部门'));
 
       async function handleSubmit() {
         try {

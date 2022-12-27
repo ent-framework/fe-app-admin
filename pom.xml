@@ -13,7 +13,7 @@
       <version>7.1.5</version>
     </parent>
 
-    <artifactId>db-mds-it-web</artifactId>
+    <artifactId>fe-app-admin</artifactId>
 
     <packaging>jar</packaging>
 

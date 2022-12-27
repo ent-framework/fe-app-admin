@@ -1,23 +1,30 @@
-import { HistoryScoreRequest, HistoryScoreResponse } from '/@/generated/model/history-score';
+import { HistoryScore } from '/@/generated/model/history-score';
+import { HistoryScorePageModel } from '/@/generated/model/history-score';
 import { defHttp } from 'fe-ent-core/lib/utils/http/axios';
 
-export const CreateHistoryScore = (data?: HistoryScoreRequest) =>
-  defHttp.post<HistoryScoreResponse>({ url: '/ent-example/history-score/create', data });
+/**
+ * 考试记录 服务请求类
+ */
+export const HistoryScoreCreate = (request?: HistoryScore) =>
+  defHttp.post<HistoryScore>({ url: '/ent-example/history-score/create', data: request });
 
-export const BatchCreateHistoryScore = (data?: HistoryScoreRequest[]) =>
-  defHttp.post<number>({ url: '/ent-example/history-score/batch-create', data });
+export const HistoryScoreBatchCreate = (request?: HistoryScore[]) =>
+  defHttp.post<HistoryScore[]>({ url: '/ent-example/history-score/batch-create', data: request });
 
-export const ListQueryHistoryScore = (data?: HistoryScoreRequest) =>
-  defHttp.post<HistoryScoreResponse[]>({ url: '/ent-example/history-score/list', data });
+export const HistoryScoreUpdate = (request?: HistoryScore) =>
+  defHttp.post<HistoryScore>({ url: '/ent-example/history-score/update', data: request });
 
-export const PageQueryHistoryScore = (data?: HistoryScoreRequest) =>
-  defHttp.post<number>({ url: '/ent-example/history-score/page', data });
+export const HistoryScoreList = (request?: HistoryScore) =>
+  defHttp.post<HistoryScore[]>({ url: '/ent-example/history-score/list', data: request });
 
-export const UpdateHistoryScore = (data?: HistoryScoreRequest) =>
-  defHttp.post<HistoryScoreResponse>({ url: '/ent-example/history-score/update', data });
+export const HistoryScorePage = (request?: HistoryScore) =>
+  defHttp.post<HistoryScorePageModel>({ url: '/ent-example/history-score/page', data: request });
 
-export const DeleteHistoryScore = (data?: HistoryScoreRequest) =>
-  defHttp.post<HistoryScoreResponse>({ url: '/ent-example/history-score/delete', data });
+export const HistoryScoreDeleteById = (request?: HistoryScore) =>
+  defHttp.post<number>({ url: '/ent-example/history-score/delete-by-id', data: request });
 
-export const BatchDeleteHistoryScore = (data?: HistoryScoreRequest) =>
-  defHttp.post<HistoryScoreResponse>({ url: '/ent-example/history-score/batch-delete', data });
+export const HistoryScoreBatchDelete = (request?: HistoryScore) =>
+  defHttp.post<number>({ url: '/ent-example/history-score/batch-delete', data: request });
+
+export const HistoryScoreGetById = (request?: HistoryScore) =>
+  defHttp.get<HistoryScore>({ url: '/ent-example/history-score/detail', data: request });

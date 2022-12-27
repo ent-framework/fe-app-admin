@@ -8,11 +8,11 @@
       <template #action="{ record }">
         <EntTableAction
           :actions="[
-            {
+/*            {
               icon: 'clarity:info-standard-line',
               tooltip: '查看用户详情',
               onClick: handleView.bind(null, record),
-            },
+            },*/
             {
               icon: 'clarity:note-edit-line',
               tooltip: '编辑用户资料',
@@ -28,33 +28,44 @@
               },
             },
           ]"
+          :dropDownActions="[
+            {
+              icon: 'ant-design:api-twotone',
+              label: '分配角色',
+              onClick: handleBindRoles.bind(null, record),
+            },
+          ]"
         />
       </template>
     </EntTable>
     <UserDrawer @register="registerDrawer" @success="handleSuccess" />
+    <GrantRoleDrawer @register="registerGrantRoleDrawer" />
   </EntPageWrapper>
 </template>
 <script lang="ts">
   import { defineComponent, reactive } from 'vue';
 
   import { EntTable, useTable, EntTableAction } from 'fe-ent-core/lib/components/table';
-  import { getUserPage } from '/@/api/user';
+  import { getUserPage, deleteUser } from '/@/api/user';
   import { EntPageWrapper } from 'fe-ent-core/lib/components/page';
   import OrgTree from './org-tree.vue';
+  import GrantRoleDrawer from './grant-role-drawer.vue';
   import { useDrawer } from 'fe-ent-core/lib/components/drawer';
   import UserDrawer from './user-drawer.vue';
-
+  import { useMessage } from 'fe-ent-core/lib/hooks/web/use-message';
   import { columns, searchFormSchema } from './user-data';
   import { useGo } from 'fe-ent-core/lib/hooks/web/use-page';
 
   export default defineComponent({
     name: 'AccountManagement',
-    components: { EntTable, EntPageWrapper, OrgTree, UserDrawer, EntTableAction },
+    components: { EntTable, EntPageWrapper, OrgTree, UserDrawer, EntTableAction, GrantRoleDrawer },
     setup() {
       const go = useGo();
       const [registerDrawer, { openDrawer }] = useDrawer();
+      const [registerGrantRoleDrawer, { openDrawer: openGrantRoleDrawer }] = useDrawer();
       const searchInfo = reactive<Recordable>({});
-      const [registerTable, { reload, updateTableDataRecord }] = useTable({
+      const { createMessage } = useMessage();
+      const [registerTable, { reload }] = useTable({
         title: '账号列表',
         api: getUserPage,
         rowKey: 'userId',
@@ -94,21 +105,19 @@
       }
 
       function handleDelete(record: Recordable) {
-        console.log(record);
+        deleteUser(record)
+          .catch()
+          .then(() => {
+            createMessage.success(`删除成功`);
+            reload();
+          });
       }
 
-      function handleSuccess({ isUpdate, values }) {
-        if (isUpdate) {
-          // 演示不刷新表格直接更新内部数据。
-          // 注意：updateTableDataRecord要求表格的rowKey属性为string并且存在于每一行的record的keys中
-          const result = updateTableDataRecord(values.id, values);
-          console.log(result);
-        } else {
-          reload();
-        }
+      function handleSuccess() {
+        reload();
       }
 
-      function handleSelect(orgId = '') {
+      function handleSelect(orgId) {
         searchInfo.orgId = orgId;
         reload();
       }
@@ -117,15 +126,23 @@
         go('/system/account_detail/' + record.id);
       }
 
+      function handleBindRoles(record: Recordable) {
+        openGrantRoleDrawer(true, {
+          record,
+          isUpdate: true,
+        });
+      }
       return {
         registerTable,
         registerDrawer,
+        registerGrantRoleDrawer,
         handleCreate,
         handleEdit,
         handleDelete,
         handleSuccess,
         handleSelect,
         handleView,
+        handleBindRoles,
         searchInfo,
       };
     },

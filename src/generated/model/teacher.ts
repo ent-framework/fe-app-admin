@@ -1,48 +1,60 @@
 import { BaseRequest } from '/@/generated/model/base-request';
-import { BaseResponse } from '/@/generated/model/base-response';
+import { BasicFetchResult } from 'fe-ent-core/lib/logics/model';
+import { StatusEnum } from '/@/generated/model/enum/status-enum';
 
 /**
  * 教师 服务请求类
  */
-export interface TeacherRequest extends BaseRequest {
+export interface Teacher extends BaseRequest {
+  /**
+   * Id
+   */
   id?: number;
 
+  /**
+   * 姓名
+   */
   name?: string;
 
+  /**
+   * 卡号
+   */
   cardNum?: string;
 
+  /**
+   * 性别[MALE(0):男,FEMALE(1):女]
+   */
   gender?: Gender;
 
+  /**
+   * 生日
+   */
   birthday?: string;
 
+  /**
+   * 级别
+   */
   workSeniority?: number;
 
-  statusFlag?: Byte;
+  /**
+   * 状态
+   */
+  statusFlag?: StatusEnum;
 
-  techCourses?: string;
+  /**
+   * 教授课程
+   */
+  techCourses?: string[];
 
-  properties?: byte[];
+  /**
+   * 属性
+   */
+  properties?: any;
+
+  ids?: number[];
 }
 
-export interface TeacherResponse extends BaseResponse {
-  id?: number;
-
-  name?: string;
-
-  cardNum?: string;
-
-  gender?: Gender;
-
-  birthday?: string;
-
-  workSeniority?: number;
-
-  statusFlag?: Byte;
-
-  techCourses?: string;
-
-  properties?: byte[];
-}
+export type TeacherPageModel = BasicFetchResult<Teacher>;
 
 export interface Gender {
   value?: string;

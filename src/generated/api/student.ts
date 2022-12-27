@@ -1,23 +1,30 @@
-import { StudentRequest, StudentResponse } from '/@/generated/model/student';
+import { Student } from '/@/generated/model/student';
+import { StudentPageModel } from '/@/generated/model/student';
 import { defHttp } from 'fe-ent-core/lib/utils/http/axios';
 
-export const CreateStudent = (data?: StudentRequest) =>
-  defHttp.post<StudentResponse>({ url: '/ent-example/student/create', data });
+/**
+ * 学生 服务请求类
+ */
+export const StudentCreate = (request?: Student) =>
+  defHttp.post<Student>({ url: '/ent-example/student/create', data: request });
 
-export const BatchCreateStudent = (data?: StudentRequest[]) =>
-  defHttp.post<number>({ url: '/ent-example/student/batch-create', data });
+export const StudentBatchCreate = (request?: Student[]) =>
+  defHttp.post<Student[]>({ url: '/ent-example/student/batch-create', data: request });
 
-export const ListQueryStudent = (data?: StudentRequest) =>
-  defHttp.post<StudentResponse[]>({ url: '/ent-example/student/list', data });
+export const StudentUpdate = (request?: Student) =>
+  defHttp.post<Student>({ url: '/ent-example/student/update', data: request });
 
-export const PageQueryStudent = (data?: StudentRequest) =>
-  defHttp.post<number>({ url: '/ent-example/student/page', data });
+export const StudentList = (request?: Student) =>
+  defHttp.post<Student[]>({ url: '/ent-example/student/list', data: request });
 
-export const UpdateStudent = (data?: StudentRequest) =>
-  defHttp.post<StudentResponse>({ url: '/ent-example/student/update', data });
+export const StudentPage = (request?: Student) =>
+  defHttp.post<StudentPageModel>({ url: '/ent-example/student/page', data: request });
 
-export const DeleteStudent = (data?: StudentRequest) =>
-  defHttp.post<StudentResponse>({ url: '/ent-example/student/delete', data });
+export const StudentDeleteById = (request?: Student) =>
+  defHttp.post<number>({ url: '/ent-example/student/delete-by-id', data: request });
 
-export const BatchDeleteStudent = (data?: StudentRequest) =>
-  defHttp.post<StudentResponse>({ url: '/ent-example/student/batch-delete', data });
+export const StudentBatchDelete = (request?: Student) =>
+  defHttp.post<number>({ url: '/ent-example/student/batch-delete', data: request });
+
+export const StudentGetById = (request?: Student) =>
+  defHttp.get<Student>({ url: '/ent-example/student/detail', data: request });

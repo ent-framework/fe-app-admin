@@ -1,21 +1,25 @@
 export interface BaseRequest {
-  orderBy?: string;
-
-  otherParams?: any;
-
-  pageNo?: number;
-
-  pageSize?: number;
-
-  requestNo?: string;
-
   searchBeginTime?: string;
 
   searchEndTime?: string;
 
+  pageSize?: number;
+
+  pageNo?: number;
+
+  orderBy?: string;
+
   sortBy?: string;
+
+  otherParams?: any;
+
+  requestNo?: string;
 
   spanId?: string;
 
   token?: string;
+
+  createUser?: number;
+
+  updateUser?: number;
 }

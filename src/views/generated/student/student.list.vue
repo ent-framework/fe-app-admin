@@ -62,7 +62,7 @@
   import { defineComponent, reactive, ref } from 'vue';
 
   import { EntTable, useTable, EntTableAction } from 'fe-ent-core/lib/components/table';
-  import { PageQueryStudent, DeleteStudent, BatchDeleteStudent } from '/@/generated/api/student';
+  import { StudentPage, StudentDeleteById, StudentBatchDelete } from '/@/generated/api/student';
   import { useDrawer } from 'fe-ent-core/lib/components/drawer';
   import StudentDrawer from './student.detail.vue';
 
@@ -80,7 +80,7 @@
       const searchInfo = reactive<Recordable>({});
       const [registerTable, { reload }] = useTable({
         title: '学生列表',
-        api: PageQueryStudent,
+        api: StudentPage,
         rowKey: 'id',
         columns,
         formConfig: {
@@ -110,7 +110,6 @@
       }
 
       function handleEdit(record: Recordable) {
-        console.log(record);
         openDrawer(true, {
           record,
           edit_mode: 'u',
@@ -118,7 +117,7 @@
       }
 
       function handleDelete(record: Recordable) {
-        DeleteStudent(record).then(() => {
+        StudentDeleteById(record).then(() => {
           createMessage.success(`删除成功`);
           reload();
         });
@@ -142,7 +141,7 @@
 
       function handleBatchDelete() {
         const records = { ids: checkedKeys.value };
-        BatchDeleteStudent(records).then(() => {
+        StudentBatchDelete(records).then(() => {
           createMessage.success(`删除成功`);
           checkedKeys.value = [];
           reload();

@@ -12,7 +12,7 @@
         <BasicTree
           v-model:value="model[field]"
           :treeData="treeData"
-          :replaceFields="{ title: 'menuName', key: 'menuId' }"
+          :fieldNames="{ title: 'menuName', key: 'menuId' }"
           :checked-keys="checkedKeys"
           checkable
           @check="onCheckNode"
@@ -24,7 +24,7 @@
   </EntDrawer>
 </template>
 <script lang="ts">
-  import { defineComponent, ref } from 'vue';
+  import { defineComponent, ref, unref } from 'vue';
   import { EntForm, useForm } from 'fe-ent-core/lib/components/form';
   import { grantMenuFormSchema } from './role-data';
   import { EntDrawer, useDrawerInner } from 'fe-ent-core/lib/components/drawer';
@@ -33,7 +33,7 @@
   import { grantMenu, getRoleMenus } from '/@/api/role';
   import { getMenuList } from '/@/api/menu';
   import { CheckKeys } from 'fe-ent-core/lib/components/tree';
-  import { CheckEvent } from 'ant-design-vue/lib/tree/Tree';
+  import { AntTreeNodeCheckedEvent } from 'ant-design-vue/lib/tree/Tree';
 
   export default defineComponent({
     name: 'GrantMenuDrawer',
@@ -82,7 +82,7 @@
       }
 
       // 特殊的事件监听，要获取树的半选中状态
-      function onCheckNode(chkKeys: CheckKeys, event: CheckEvent) {
+      function onCheckNode(chkKeys: CheckKeys, event: AntTreeNodeCheckedEvent) {
         checkedKeys.value = {
           checked: chkKeys,
           halfChecked: event.halfCheckedKeys,

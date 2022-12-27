@@ -15,7 +15,7 @@
   import { EntForm, useForm } from 'fe-ent-core/lib/components/form';
   import { formSchema } from './menu-data';
   import { EntDrawer, useDrawerInner } from 'fe-ent-core/lib/components/drawer';
-  import { getMenuList, saveOrUpdateMenu } from '/@/api/menu';
+  import { saveOrUpdateMenu } from '/@/api/menu';
   import { useMessage } from 'fe-ent-core/lib/hooks/web/use-message';
 
   export default defineComponent({
@@ -26,7 +26,7 @@
       const isUpdate = ref(true);
       const menuId = ref(null);
       const { createMessage } = useMessage();
-      const [registerForm, { resetFields, setFieldsValue, updateSchema, validate }] = useForm({
+      const [registerForm, { resetFields, setFieldsValue, validate }] = useForm({
         labelWidth: 100,
         schemas: formSchema,
         showActionButtonGroup: false,
@@ -44,11 +44,6 @@
             ...data.record,
           });
         }
-        const treeData = await getMenuList();
-        await updateSchema({
-          field: 'menuParentId',
-          componentProps: { treeData },
-        });
       });
 
       const getTitle = computed(() => (!unref(isUpdate) ? '新增菜单' : '编辑菜单'));

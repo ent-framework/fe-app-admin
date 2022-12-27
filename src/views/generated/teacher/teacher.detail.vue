@@ -16,7 +16,7 @@
   import { formSchema } from './teacher.data';
   import { EntDrawer, useDrawerInner } from 'fe-ent-core/lib/components/drawer';
   import { useMessage } from 'fe-ent-core/lib/hooks/web/use-message';
-  import { CreateTeacher, UpdateTeacher } from '/@/generated/api/teacher';
+  import { TeacherCreate, TeacherUpdate } from '/@/generated/api/teacher';
 
   export default defineComponent({
     name: 'TeacherDrawer',
@@ -68,7 +68,7 @@
           const values = await validate();
           setDrawerProps({ confirmLoading: true });
           if (unref(mode) == 'u') {
-            UpdateTeacher({ ...values, id: id.value })
+            TeacherUpdate({ ...values, id: id.value })
               .then(() => {
                 createMessage.success(`保存成功`);
                 closeDrawer();
@@ -76,7 +76,7 @@
               })
               .catch();
           } else if (unref(mode) == 'c') {
-            CreateTeacher({ ...values, id: null })
+            TeacherCreate({ ...values, id: null })
               .then(() => {
                 createMessage.success(`保存成功`);
                 closeDrawer();

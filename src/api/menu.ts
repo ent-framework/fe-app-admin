@@ -47,3 +47,9 @@ export const saveOrUpdateMenu = (data: MenuModel) => {
     });
   }
 };
+
+export const getUserLeftMenus = (params?: MenuResourceParams) =>
+  defHttp.get<MenuListGetResultModel>({
+    url: `${import.meta.env.VITE_ADMIN_API_PREFIX || ''}/sys-menu/get-left-menus`,
+    params,
+  });

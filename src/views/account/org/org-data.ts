@@ -8,13 +8,13 @@ import { getOrgTree } from '/@/api/org';
 
 export const columns: BasicColumn[] = [
   {
-    title: '组织名称',
+    title: '部门名称',
     dataIndex: 'orgName',
     width: 400,
     align: 'left',
   },
   {
-    title: '组织编码',
+    title: '部门编码',
     dataIndex: 'orgCode',
     width: 200,
   },
@@ -43,10 +43,10 @@ export const columns: BasicColumn[] = [
           updateRoleStatus({ ...record, statusFlag: newStatus })
             .then(() => {
               record.statusFlag = newStatus;
-              createMessage.success(`已成功修改角色状态`);
+              createMessage.success(`已成功修改部门状态`);
             })
             .catch(() => {
-              createMessage.error('修改角色状态失败');
+              createMessage.error('修改部门状态失败');
             })
             .finally(() => {
               record.pendingStatus = false;
@@ -69,7 +69,7 @@ export const columns: BasicColumn[] = [
 export const searchFormSchema: FormSchema[] = [
   {
     field: 'menuName',
-    label: '菜单名称',
+    label: '部门名称',
     component: 'Input',
     colProps: { span: 8 },
   },
@@ -90,13 +90,13 @@ export const searchFormSchema: FormSchema[] = [
 export const formSchema: FormSchema[] = [
   {
     field: 'orgName',
-    label: '组织名称',
+    label: '部门名称',
     required: true,
     component: 'Input',
   },
   {
     field: 'orgCode',
-    label: '组织编码',
+    label: '部门编码',
     required: true,
     component: 'Input',
   },
@@ -123,7 +123,7 @@ export const formSchema: FormSchema[] = [
     component: 'InputTextArea',
   },
   {
-    label: '所属组织',
+    label: '所属部门',
     field: 'orgParentId',
     component: 'ApiTreeSelect',
     componentProps: {

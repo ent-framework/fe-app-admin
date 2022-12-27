@@ -16,7 +16,7 @@
   import { formSchema } from './class-grade.data';
   import { EntDrawer, useDrawerInner } from 'fe-ent-core/lib/components/drawer';
   import { useMessage } from 'fe-ent-core/lib/hooks/web/use-message';
-  import { CreateClassGrade, UpdateClassGrade } from '/@/generated/api/class-grade';
+  import { ClassGradeCreate, ClassGradeUpdate } from '/@/generated/api/class-grade';
 
   export default defineComponent({
     name: 'ClassGradeDrawer',
@@ -68,7 +68,7 @@
           const values = await validate();
           setDrawerProps({ confirmLoading: true });
           if (unref(mode) == 'u') {
-            UpdateClassGrade({ ...values, id: id.value })
+            ClassGradeUpdate({ ...values, id: id.value })
               .then(() => {
                 createMessage.success(`保存成功`);
                 closeDrawer();
@@ -76,7 +76,7 @@
               })
               .catch();
           } else if (unref(mode) == 'c') {
-            CreateClassGrade({ ...values, id: null })
+            ClassGradeCreate({ ...values, id: null })
               .then(() => {
                 createMessage.success(`保存成功`);
                 closeDrawer();

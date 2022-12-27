@@ -4,24 +4,15 @@ import { default as LAYOUT } from 'fe-ent-core/lib/layouts/default';
 
 const routes: AppRouteModule = {
   path: '/example',
-  name: 'BaseData',
+  name: 'BaseRouteData',
   component: LAYOUT,
   redirect: '/basic/config',
   meta: {
     icon: 'simple-icons:about-dot-me',
-    title: '基础数据',
+    title: '教学系统',
     orderNo: 20,
   },
   children: [
-    {
-      path: 'teacher',
-      name: 'TeacherManagement',
-      component: () => import('/@/views/generated/teacher/teacher.list.vue'),
-      meta: {
-        title: '教师',
-        icon: 'simple-icons:about-dot-me',
-      },
-    },
     {
       path: 'history-score',
       name: 'HistoryScoreManagement',
@@ -37,6 +28,15 @@ const routes: AppRouteModule = {
       component: () => import('/@/views/generated/class-grade/class-grade.list.vue'),
       meta: {
         title: '班级',
+        icon: 'simple-icons:about-dot-me',
+      },
+    },
+    {
+      path: 'teacher',
+      name: 'TeacherManagement',
+      component: () => import('/@/views/generated/teacher/teacher.list.vue'),
+      meta: {
+        title: '教师',
         icon: 'simple-icons:about-dot-me',
       },
     },

@@ -1,61 +1,65 @@
 <template>
-  <EntDrawer v-bind="$attrs" @register="registerDrawer" showFooter width="500px" @ok="handleSubmit">
+  <EntDrawer
+    v-bind="$attrs"
+    @register="registerDrawer"
+    showFooter
+    title="分配角色"
+    width="500px"
+    @ok="handleSubmit"
+  >
     <EntForm @register="registerForm" />
   </EntDrawer>
 </template>
 <script lang="ts">
   import { defineComponent, ref, unref } from 'vue';
   import { EntForm, useForm } from 'fe-ent-core/lib/components/form';
-  import { bindMenuFormSchema } from './role-data';
+  import { grantRoleFormSchema } from './user-data';
   import { EntDrawer, useDrawerInner } from 'fe-ent-core/lib/components/drawer';
-  import { TreeItem } from 'fe-ent-core/lib/components/tree';
   import { useMessage } from 'fe-ent-core/lib/hooks/web/use-message';
-  import { bindMenu } from '/@/api/role';
-  import { getMenuList } from '/@/api/menu';
+  import { grantRole, getUserRoles } from '/@/api/user';
 
   export default defineComponent({
-    name: 'GrantMenuDrawer',
+    name: 'BindResourceDrawer',
     components: { EntDrawer, EntForm },
     emits: ['success', 'register'],
     setup(_, { emit }) {
       const isUpdate = ref(true);
-      const treeData = ref<TreeItem[]>([]);
       const { createMessage } = useMessage();
-      const roleId = ref(null);
-      const title = ref(null);
-      const [registerForm, { resetFields, setFieldsValue, validate, updateSchema }] = useForm({
+      const userId = ref(null);
+      const checkedKeys = ref<number[]>([]);
+      const [registerForm, { resetFields, setFieldsValue, validate }] = useForm({
         labelWidth: 90,
-        schemas: bindMenuFormSchema,
+        schemas: grantRoleFormSchema,
         showActionButtonGroup: false,
       });
 
       const [registerDrawer, { setDrawerProps, closeDrawer }] = useDrawerInner(async (data) => {
         await resetFields();
-        setDrawerProps({ confirmLoading: false });
-
+        setDrawerProps({ confirmLoading: false, destroyOnClose: true });
         isUpdate.value = !!data?.isUpdate;
 
+        const grantRoleIdList = (
+          await getUserRoles({
+            userId: data.record.userId,
+          })
+        ).map((userRole) => userRole.roleId);
+
         if (unref(isUpdate)) {
-          roleId.value = data.record.roleId;
-          title.value = data.record.roleName;
+          userId.value = data.record.userId;
           await setFieldsValue({
             ...data.record,
+            grantRoleIdList,
           });
         }
-        const treeData = await getMenuList();
-        await updateSchema({
-          field: 'menuId',
-          componentProps: { treeData },
-        });
       });
 
       async function handleSubmit() {
         try {
           const values = await validate();
           setDrawerProps({ confirmLoading: true });
-          bindMenu({ ...values, ...(unref(isUpdate) && { roleId: roleId.value }) })
+          grantRole({ ...values, ...(unref(isUpdate) && { userId: userId.value }) })
             .then(() => {
-              createMessage.success(`保存成功`);
+              createMessage.success(`角色分配成功`);
               closeDrawer();
               emit('success');
             })
@@ -69,7 +73,7 @@
         registerDrawer,
         registerForm,
         handleSubmit,
-        treeData,
+        checkedKeys,
       };
     },
   });

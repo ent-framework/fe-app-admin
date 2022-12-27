@@ -4,7 +4,7 @@ import { h } from 'vue';
 import { Tag } from 'ant-design-vue';
 import { getAppList } from '/@/api/app';
 import { EntIcon } from 'fe-ent-core/lib/components/icon';
-
+import { getMenuList } from '/@/api/menu';
 export const columns: BasicColumn[] = [
   {
     title: '菜单名称',
@@ -135,17 +135,18 @@ export const formSchema: FormSchema[] = [
   },
   {
     field: 'menuName',
-    label: '菜单名称',
+    label: '名称',
     component: 'Input',
     required: true,
   },
   {
     field: 'menuParentId',
     label: '上级菜单',
-    component: 'TreeSelect',
+    component: 'ApiTreeSelect',
     ifShow: ({ values }) => isMenu(values.menuType),
     componentProps: {
-      replaceFields: {
+      api: getMenuList,
+      fieldNames: {
         title: 'menuName',
         key: 'menuId',
         value: 'menuId',
@@ -159,7 +160,6 @@ export const formSchema: FormSchema[] = [
     label: '所属应用',
     ifShow: ({ values }) => isDir(values.menuType),
     componentProps: {
-      // more details see /src/components/Form/src/components/ApiSelect.vue
       api: getAppList,
       resultField: 'items',
       // use name as label
@@ -175,7 +175,7 @@ export const formSchema: FormSchema[] = [
   },
   {
     field: 'menuCode',
-    label: '菜单编码',
+    label: '编码',
     component: 'Input',
     required: true,
   },
@@ -208,7 +208,7 @@ export const formSchema: FormSchema[] = [
     field: 'router',
     label: '路由地址',
     component: 'Input',
-    ifShow: ({ values }) => isMenu(values.menuType),
+    ifShow: ({ values }) => isMenu(values.menuType) || isDir(values.menuType),
   },
   {
     field: 'component',

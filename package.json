@@ -31,22 +31,22 @@
     "gen:icon": "esno ./build/generate/icon/index.ts"
   },
   "dependencies": {
-    "vue": "3.2.31",
-    "ant-design-vue": "2.2.8",
+    "vue": "^3.2.31",
+    "ant-design-vue": "^3.2.15",
     "lodash": "^4.17.21",
-    "fe-ent-core": "1.2.20",
-    "fe-ent-theme-api": "1.2.20",
-    "@fe-ent-extension/code-editor": "1.2.20",
-    "@fe-ent-extension/echarts": "1.2.20",
+    "fe-ent-core": "^1.3.9",
+    "fe-ent-theme-api": "^1.3.9",
+    "fe-ent-code-editor": "^1.3.9",
+    "fe-ent-echarts": "^1.3.9",
     "echarts": "^5.2.2",
-    "@fe-ent-extension/flow-chart": "1.2.20",
-    "@fe-ent-extension/markdown": "1.2.20",
-    "@fe-ent-extension/qrcode": "1.2.20",
-    "@fe-ent-extension/tinymce": "1.2.20"
+    "fe-ent-flow-chart": "^1.3.9",
+    "fe-ent-markdown": "^1.3.9",
+    "fe-ent-qrcode": "^1.3.9",
+    "fe-ent-tinymce": "^1.3.9"
   },
   "devDependencies": {
-    "fe-ent-build": "1.2.20",
-    "vite-plugin-ent-theme": "1.2.20",
+    "fe-ent-vite": "^1.3.9",
+    "vite-plugin-ent-theme": "^1.3.9",
     "@commitlint/cli": "^14.1.0",
     "@commitlint/config-conventional": "^14.1.0",
     "@iconify/json": "^1.1.422",
@@ -105,7 +105,7 @@
     "stylelint-config-standard": "^23.0.0",
     "stylelint-order": "^5.0.0",
     "typescript": "4.5.5",
-    "vite": "2.8.6",
+    "vite": "3.2.5",
     "vite-plugin-windicss": "1.8.2"
   },
   "resolutions": {

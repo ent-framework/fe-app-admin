@@ -15,8 +15,10 @@
     <property name="javaFileEncoding" value="UTF-8"/>
 
     <property name="projectRootAlias" value="/@/"/>
+
+    <property name="apiTargetPackage" value="generated.api"/>
+    <property name="enumTargetPackage" value="generated.model.enum"/>
     <property name="templateBaseDir" value="${templateBaseDir}"/>
-    <property name="typescriptModelPackage" value="generated.model"/>
 
     <!--指定需要使用的plugin, LombokAnnotationPlugin用于生成lombok注解, -->
     <!--plugin之间存在顺序关系, 为了生成代码的美观, 建议将SerializablePlugin放到最后-->
@@ -32,13 +34,15 @@
     </plugin>
 
     <plugin type="com.accenture.abg.coe.kernel.db.generator.plugin.web.TypescriptModelPlugin">
-      <property name="targetPackage" value="generated.model"/>
       <property name="pojoRequestRootClass" value="com.accenture.abg.coe.kernel.rule.pojo.request.BaseRequest"/>
-      <property name="pojoResponseRootClass" value="com.accenture.abg.coe.kernel.db.api.pojo.response.BaseResponse"/>
     </plugin>
 
     <!-- 生成API接口 -->
-    <plugin type="com.accenture.abg.coe.kernel.db.generator.plugin.web.TemplateModelViewPlugin">
+    <plugin type="com.accenture.abg.coe.kernel.db.generator.plugin.web.TypescriptRestApiPlugin">
+      <property name="writeMode" value="OVER_WRITE"/>
+      <property name="apiPrefix" value="/ent-example"/>
+    </plugin>
+<!--    <plugin type="com.accenture.abg.coe.kernel.db.generator.plugin.web.TemplateModelViewPlugin">
       <property name="writeMode" value="OVER_WRITE"/>
       <property name="enableSubPackages" value="false"/>
       <property name="targetPackage" value="generated.api"/>
@@ -46,7 +50,7 @@
       <property name="fileName" value="%s" />
       <property name="fileExt" value=".ts"/>
       <property name="var_apiPrefix" value="/ent-example"/>
-    </plugin>
+    </plugin>-->
     <!-- 生成列表页面 -->
     <plugin type="com.accenture.abg.coe.kernel.db.generator.plugin.web.TemplateModelViewPlugin">
       <property name="writeMode" value="OVER_WRITE"/>
@@ -85,7 +89,6 @@
       <property name="var_routerPrefixPath" value="/example"/>
     </plugin>
 
-
     <!--不生成任何MBG自带的Generated注释-->
     <commentGenerator type="com.accenture.abg.coe.kernel.db.generator.comment.SimpleCommentGenerator"/>
 
@@ -98,7 +101,7 @@
     />
 
     <!--指定java类型处理器, 如果有自定义的类型, 需要进行指定-->
-    <javaTypeResolver>
+    <javaTypeResolver type="">
       <property name="forceBigDecimals" value="false"/>
       <property name="useJSR310Types" value="true"/>
     </javaTypeResolver>
@@ -112,6 +115,18 @@
       <property name="trimStrings" value="true"/>
       <property name="rootClass" value="com.accenture.abg.coe.kernel.db.api.pojo.entity.BaseEntity"/>
     </javaModelGenerator>
+
+    <columnOverride column="status_flag" javaType="com.accenture.abg.coe.kernel.rule.enums.StatusEnum" />
+    <columnOverride column="tech_courses" javaType="java.util.List" typeHandler="com.accenture.abg.coe.kernel.db.api.handler.StringListHandler">
+      <genericType javaType="String"/>
+    </columnOverride>
+    <columnOverride column="take_courses" javaType="java.util.List" typeHandler="com.accenture.abg.coe.kernel.db.api.handler.StringListHandler">
+      <genericType javaType="String"/>
+    </columnOverride>
+    <columnOverride column="score" javaType="java.util.Map" typeHandler="com.accenture.abg.coe.kernel.db.api.handler.ScoreMapHandler">
+      <genericType javaType="String"/>
+      <genericType javaType="Integer"/>
+    </columnOverride>
 
     <!--指定需要扫描的表, table标签可以有多个, 甚至可以逐表配置, 也可以统一配置-->
     <!--注意：由于使用了h2的内存模式, 系统表和用户表放在一起, 所以用户表一定要有一种方式能够区分, 否则系统表也会生成Model和Mapper类-->
@@ -130,6 +145,17 @@
 <!--      <columnOverride column="create_time" isGeneratedAlways="true"/>
       <columnOverride column="update_time" isGeneratedAlways="true"/>-->
     </table>
-
+    <table tableName="exam_teacher" displayField="name">
+      <columnOverride column="properties" javaType="com.accenture.abg.coe.kernel.db.mds.ext.dto.TeachProperty" />
+    </table>
+    <table tableName="exam_student" logicDeleteColumn="del_flag" versionColumn="version_">
+      <columnOverride column="del_flag" javaType="com.accenture.abg.coe.kernel.rule.enums.YesOrNotEnum" />
+    </table>
+    <joinConfig targetPackage="com.accenture.abg.coe.kernel.db.mds.example.mapper" targetProject="src/main/resources">
+      <joinEntry leftTable="exam_class_grade">
+        <joinTarget rightTable="exam_student" property="students" leftTableColumn="id" rightTableColumn="grade_id" joinType="MORE"/>
+        <joinTarget rightTable="exam_teacher" property="regulator" leftTableColumn="regulator_id" rightTableColumn="id" joinType="ONE"/>
+      </joinEntry>
+    </joinConfig>
   </context>
 </generatorConfiguration>

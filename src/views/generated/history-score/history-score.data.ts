@@ -28,6 +28,26 @@ export const columns: BasicColumn[] = [
     dataIndex: 'score',
     width: 120,
   },
+  {
+    title: '创建人',
+    dataIndex: 'createUserName',
+    width: 120,
+  },
+  {
+    title: '创建时间',
+    dataIndex: 'createTime',
+    width: 120,
+  },
+  {
+    title: '更新人',
+    dataIndex: 'updateUserName',
+    width: 120,
+  },
+  {
+    title: '更新时间',
+    dataIndex: 'updateTime',
+    width: 120,
+  },
 ];
 
 export const searchFormSchema: FormSchema[] = [
@@ -55,7 +75,7 @@ export const formSchema: FormSchema[] = [
   {
     field: 'examTime',
     label: '考试时间',
-    component: 'Input',
+    component: 'DatePicker',
     required: true,
   },
   {

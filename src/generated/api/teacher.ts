@@ -1,23 +1,30 @@
-import { TeacherRequest, TeacherResponse } from '/@/generated/model/teacher';
+import { Teacher } from '/@/generated/model/teacher';
+import { TeacherPageModel } from '/@/generated/model/teacher';
 import { defHttp } from 'fe-ent-core/lib/utils/http/axios';
 
-export const CreateTeacher = (data?: TeacherRequest) =>
-  defHttp.post<TeacherResponse>({ url: '/ent-example/teacher/create', data });
+/**
+ * 教师 服务请求类
+ */
+export const TeacherCreate = (request?: Teacher) =>
+  defHttp.post<Teacher>({ url: '/ent-example/teacher/create', data: request });
 
-export const BatchCreateTeacher = (data?: TeacherRequest[]) =>
-  defHttp.post<number>({ url: '/ent-example/teacher/batch-create', data });
+export const TeacherBatchCreate = (request?: Teacher[]) =>
+  defHttp.post<Teacher[]>({ url: '/ent-example/teacher/batch-create', data: request });
 
-export const ListQueryTeacher = (data?: TeacherRequest) =>
-  defHttp.post<TeacherResponse[]>({ url: '/ent-example/teacher/list', data });
+export const TeacherUpdate = (request?: Teacher) =>
+  defHttp.post<Teacher>({ url: '/ent-example/teacher/update', data: request });
 
-export const PageQueryTeacher = (data?: TeacherRequest) =>
-  defHttp.post<number>({ url: '/ent-example/teacher/page', data });
+export const TeacherList = (request?: Teacher) =>
+  defHttp.post<Teacher[]>({ url: '/ent-example/teacher/list', data: request });
 
-export const UpdateTeacher = (data?: TeacherRequest) =>
-  defHttp.post<TeacherResponse>({ url: '/ent-example/teacher/update', data });
+export const TeacherPage = (request?: Teacher) =>
+  defHttp.post<TeacherPageModel>({ url: '/ent-example/teacher/page', data: request });
 
-export const DeleteTeacher = (data?: TeacherRequest) =>
-  defHttp.post<TeacherResponse>({ url: '/ent-example/teacher/delete', data });
+export const TeacherDeleteById = (request?: Teacher) =>
+  defHttp.post<number>({ url: '/ent-example/teacher/delete-by-id', data: request });
 
-export const BatchDeleteTeacher = (data?: TeacherRequest) =>
-  defHttp.post<TeacherResponse>({ url: '/ent-example/teacher/batch-delete', data });
+export const TeacherBatchDelete = (request?: Teacher) =>
+  defHttp.post<number>({ url: '/ent-example/teacher/batch-delete', data: request });
+
+export const TeacherGetById = (request?: Teacher) =>
+  defHttp.get<Teacher>({ url: '/ent-example/teacher/detail', data: request });

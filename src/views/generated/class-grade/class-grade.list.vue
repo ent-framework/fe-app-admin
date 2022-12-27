@@ -62,7 +62,7 @@
   import { defineComponent, reactive, ref } from 'vue';
 
   import { EntTable, useTable, EntTableAction } from 'fe-ent-core/lib/components/table';
-  import { PageQueryClassGrade, DeleteClassGrade, BatchDeleteClassGrade } from '/@/generated/api/class-grade';
+  import { ClassGradePage, ClassGradeDeleteById, ClassGradeBatchDelete } from '/@/generated/api/class-grade';
   import { useDrawer } from 'fe-ent-core/lib/components/drawer';
   import ClassGradeDrawer from './class-grade.detail.vue';
 
@@ -80,7 +80,7 @@
       const searchInfo = reactive<Recordable>({});
       const [registerTable, { reload }] = useTable({
         title: '班级列表',
-        api: PageQueryClassGrade,
+        api: ClassGradePage,
         rowKey: 'id',
         columns,
         formConfig: {
@@ -110,7 +110,6 @@
       }
 
       function handleEdit(record: Recordable) {
-        console.log(record);
         openDrawer(true, {
           record,
           edit_mode: 'u',
@@ -118,7 +117,7 @@
       }
 
       function handleDelete(record: Recordable) {
-        DeleteClassGrade(record).then(() => {
+        ClassGradeDeleteById(record).then(() => {
           createMessage.success(`删除成功`);
           reload();
         });
@@ -142,7 +141,7 @@
 
       function handleBatchDelete() {
         const records = { ids: checkedKeys.value };
-        BatchDeleteClassGrade(records).then(() => {
+        ClassGradeBatchDelete(records).then(() => {
           createMessage.success(`删除成功`);
           checkedKeys.value = [];
           reload();

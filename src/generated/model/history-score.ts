@@ -1,36 +1,44 @@
 import { BaseRequest } from '/@/generated/model/base-request';
-import { BaseResponse } from '/@/generated/model/base-response';
+import { BasicFetchResult } from 'fe-ent-core/lib/logics/model';
 
 /**
  * 考试记录 服务请求类
  */
-export interface HistoryScoreRequest extends BaseRequest {
+export interface HistoryScore extends BaseRequest {
+  /**
+   * Id
+   */
   id?: number;
 
+  /**
+   * 学生ID
+   */
   studentId?: number;
 
+  /**
+   * 考试时间
+   */
   examTime?: string;
 
+  /**
+   * 考试类型[MONTHLY(0):月考,MID_TERM(1):期中,FINAL(2):期末]
+   */
   examType?: ExamType;
 
+  /**
+   * 总分数
+   */
   totalScore?: number;
 
-  score?: string;
+  /**
+   * 分数
+   */
+  score?: Map<string, number>;
+
+  ids?: number[];
 }
 
-export interface HistoryScoreResponse extends BaseResponse {
-  id?: number;
-
-  studentId?: number;
-
-  examTime?: string;
-
-  examType?: ExamType;
-
-  totalScore?: number;
-
-  score?: string;
-}
+export type HistoryScorePageModel = BasicFetchResult<HistoryScore>;
 
 export interface ExamType {
   value?: string;

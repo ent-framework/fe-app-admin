@@ -1,6 +1,7 @@
 import { BasicColumn } from 'fe-ent-core/lib/components/table';
 import { FormSchema } from 'fe-ent-core/lib/components/form';
 import { Gender_All } from '/@/generated/model/teacher';
+import { StatusEnum_All } from '/@/generated/model/enum/status-enum';
 
 export const columns: BasicColumn[] = [
   {
@@ -41,6 +42,26 @@ export const columns: BasicColumn[] = [
   {
     title: '属性',
     dataIndex: 'properties',
+    width: 120,
+  },
+  {
+    title: '创建人',
+    dataIndex: 'createUserName',
+    width: 120,
+  },
+  {
+    title: '创建时间',
+    dataIndex: 'createTime',
+    width: 120,
+  },
+  {
+    title: '更新人',
+    dataIndex: 'updateUserName',
+    width: 120,
+  },
+  {
+    title: '更新时间',
+    dataIndex: 'updateTime',
     width: 120,
   },
 ];
@@ -97,8 +118,11 @@ export const formSchema: FormSchema[] = [
   {
     field: 'statusFlag',
     label: '状态',
-    component: 'InputNumber',
+    component: 'Select',
     required: true,
+    componentProps: {
+      options: StatusEnum_All,
+    },
   },
   {
     field: 'techCourses',

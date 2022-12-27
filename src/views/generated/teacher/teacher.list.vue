@@ -62,7 +62,7 @@
   import { defineComponent, reactive, ref } from 'vue';
 
   import { EntTable, useTable, EntTableAction } from 'fe-ent-core/lib/components/table';
-  import { PageQueryTeacher, DeleteTeacher, BatchDeleteTeacher } from '/@/generated/api/teacher';
+  import { TeacherPage, TeacherDeleteById, TeacherBatchDelete } from '/@/generated/api/teacher';
   import { useDrawer } from 'fe-ent-core/lib/components/drawer';
   import TeacherDrawer from './teacher.detail.vue';
 
@@ -80,7 +80,7 @@
       const searchInfo = reactive<Recordable>({});
       const [registerTable, { reload }] = useTable({
         title: '教师列表',
-        api: PageQueryTeacher,
+        api: TeacherPage,
         rowKey: 'id',
         columns,
         formConfig: {
@@ -110,7 +110,6 @@
       }
 
       function handleEdit(record: Recordable) {
-        console.log(record);
         openDrawer(true, {
           record,
           edit_mode: 'u',
@@ -118,7 +117,7 @@
       }
 
       function handleDelete(record: Recordable) {
-        DeleteTeacher(record).then(() => {
+        TeacherDeleteById(record).then(() => {
           createMessage.success(`删除成功`);
           reload();
         });
@@ -142,7 +141,7 @@
 
       function handleBatchDelete() {
         const records = { ids: checkedKeys.value };
-        BatchDeleteTeacher(records).then(() => {
+        TeacherBatchDelete(records).then(() => {
           createMessage.success(`删除成功`);
           checkedKeys.value = [];
           reload();
