@@ -74,7 +74,6 @@
           width: 120,
           title: '操作',
           dataIndex: 'action',
-          slots: { customRender: 'action' },
           fixed: 'right',
         },
       });

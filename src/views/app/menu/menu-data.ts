@@ -147,7 +147,7 @@ export const formSchema: FormSchema[] = [
     componentProps: {
       api: getMenuList,
       fieldNames: {
-        title: 'menuName',
+        label: 'menuName',
         key: 'menuId',
         value: 'menuId',
       },

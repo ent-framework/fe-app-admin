@@ -1,16 +1,40 @@
-import type { UserConfig, ConfigEnv } from 'vite';
-import { createViteConfig } from 'fe-ent-vite';
+import { defineApplicationConfig } from 'fe-ent-build';
 
-export default ({ command, mode }: ConfigEnv): UserConfig => {
-  const alias = [
-    {
-      find: '@vueuse/shared',
-      replacement: '@vueuse/shared/index.mjs',
+export default defineApplicationConfig({
+  overrides: {
+    build: {
+      rollupOptions: {
+        input: {
+          index: 'index.html',
+          login: 'login.html',
+        },
+      },
     },
-    {
-      find: '@vueuse/core',
-      replacement: '@vueuse/core/index.mjs',
+    optimizeDeps: {
+      include: [
+        '@iconify/iconify',
+        'ant-design-vue/es/locale/zh_CN',
+        'ant-design-vue/es/locale/en_US',
+      ],
     },
-  ];
-  return createViteConfig({ command, mode }, { alias, customTheme: true });
-};
+    server: {
+      port: 3100,
+      proxy: {
+        '/api': {
+          target: 'http://localhost:8088',
+          changeOrigin: true,
+          ws: true,
+          rewrite: (path) => path.replace(new RegExp(`^/api`), ''),
+          // only https
+          // secure: false
+        },
+        '/upload': {
+          target: 'http://localhost:3300/upload',
+          changeOrigin: true,
+          ws: true,
+          rewrite: (path) => path.replace(new RegExp(`^/upload`), ''),
+        },
+      },
+    },
+  },
+});
