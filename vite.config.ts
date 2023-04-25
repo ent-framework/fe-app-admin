@@ -15,26 +15,27 @@ export default defineApplicationConfig({
         '@iconify/iconify',
         'ant-design-vue/es/locale/zh_CN',
         'ant-design-vue/es/locale/en_US',
+        'crypto-es',
       ],
     },
     server: {
       port: 3100,
-      proxy: {
-        '/api': {
-          target: 'http://localhost:8088',
-          changeOrigin: true,
-          ws: true,
-          rewrite: (path) => path.replace(new RegExp(`^/api`), ''),
-          // only https
-          // secure: false
-        },
-        '/upload': {
-          target: 'http://localhost:3300/upload',
-          changeOrigin: true,
-          ws: true,
-          rewrite: (path) => path.replace(new RegExp(`^/upload`), ''),
-        },
-      },
+      // proxy: {
+      //   '/api': {
+      //     target: 'http://localhost:3100',
+      //     changeOrigin: true,
+      //     ws: true,
+      //     // rewrite: (path) => path.replace(new RegExp(`^/api`), ''),
+      //     // only https
+      //     // secure: false
+      //   },
+      //   '/upload': {
+      //     target: 'http://localhost:3300/upload',
+      //     changeOrigin: true,
+      //     ws: true,
+      //     rewrite: (path) => path.replace(new RegExp(`^/upload`), ''),
+      //   },
+      // },
     },
   },
 });

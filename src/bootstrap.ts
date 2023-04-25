@@ -1,3 +1,4 @@
+import 'fe-ent-core/lib/style.css';
 import 'uno.css';
 // Register icon sprite
 import 'virtual:svg-icons-register';
@@ -16,7 +17,7 @@ import { LoginRoute } from 'fe-ent-core/lib/router/routes';
 import { getBasicRoutes } from 'fe-ent-core/lib/router/routes';
 import { initApplication } from '/@/init-application';
 import EntCore from 'fe-ent-core';
-//import { QrCode } from 'fe-ent-qrcode';
+import { QrCode } from 'fe-ent-qrcode';
 //import AntD from 'ant-design-vue';
 
 import 'ant-design-vue/dist/antd.less';
@@ -43,7 +44,7 @@ export async function bootstrap(needLogin: boolean) {
   //register components
   //app.use(AntD);
   app.use(EntCore);
-  //app.use(QrCode);
+  app.use(QrCode);
 
   // Multilingual configuration
   // Asynchronous case: language files may be obtained from the server side
