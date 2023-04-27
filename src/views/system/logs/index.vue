@@ -21,15 +21,10 @@
 <script lang="ts">
   import { defineComponent } from 'vue';
 
-  import {
-    EntTable,
-    useTable,
-    EntTableAction,
-    BasicColumn,
-  } from 'fe-ent-core/lib/components/table';
+  import { EntTable, useTable, EntTableAction, BasicColumn } from 'fe-ent-core/lib/components';
   import { getLogsPage, removeSession } from '/@/api/system';
-  import { EntPageWrapper } from 'fe-ent-core/lib/components/page';
-  import { useMessage } from 'fe-ent-core/lib/hooks/web/use-message';
+  import { EntPageWrapper } from 'fe-ent-core/lib/components';
+  import { useMessage } from 'fe-ent-core/lib/hooks';
   export const columns: BasicColumn[] = [
     {
       title: '应用',

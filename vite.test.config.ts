@@ -9,14 +9,10 @@ export default defineApplicationConfig({
           login: 'login.html',
         },
       },
+      minify: false,
     },
     optimizeDeps: {
-      include: [
-        '@iconify/iconify',
-        'ant-design-vue',
-        'ant-design-vue/es/locale/zh_CN',
-        'ant-design-vue/es/locale/en_US',
-      ],
+      include: ['@iconify/iconify', 'ant-design-vue'],
     },
     server: {
       port: 3100,

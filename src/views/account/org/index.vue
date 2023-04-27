@@ -29,10 +29,10 @@
 <script lang="ts">
   import { defineComponent, nextTick } from 'vue';
 
-  import { EntTable, useTable, EntTableAction } from 'fe-ent-core/lib/components/table';
+  import { EntTable, useTable, EntTableAction } from 'fe-ent-core/lib/components';
   import { getOrgList } from '/@/api/org';
 
-  import { useDrawer } from 'fe-ent-core/lib/components/drawer';
+  import { useDrawer } from 'fe-ent-core/lib/components';
   import OrgDrawer from './org-drawer.vue';
 
   import { columns, searchFormSchema } from './org-data';

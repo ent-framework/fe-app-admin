@@ -1,5 +1,3 @@
-import 'fe-ent-core/lib/style.css';
-import 'uno.css';
 // Register icon sprite
 import 'virtual:svg-icons-register';
 import App from './app.vue';
@@ -20,9 +18,13 @@ import EntCore from 'fe-ent-core';
 import { QrCode } from 'fe-ent-qrcode';
 //import AntD from 'ant-design-vue';
 
-import 'ant-design-vue/dist/antd.less';
-import 'fe-ent-core/theme/index.less';
+import 'ant-design-vue/dist/antd.css';
+// import 'fe-ent-core/theme/index.less';
+import 'fe-ent-core/dist/app.css';
+import 'fe-ent-core/lib/style.css';
+import 'uno.css';
 
+//import initUnocssRuntime from '@unocss/runtime';
 import { default as LAYOUT } from 'fe-ent-core/lib/layouts/default';
 import { default as IFRAME } from 'fe-ent-core/lib/views/sys/iframe/frame-blank';
 

@@ -9,13 +9,9 @@
   "scripts": {
     "dev": "vite",
     "test": "vite -c vite.test.config.ts --mode=test",
-    "build": "cross-env NODE_ENV=production vite build",
-    "build:test": "cross-env vite build --mode test && esno ./build/script/postBuild.ts",
-    "build:no-cache": "yarn clean:cache && npm run build",
+    "build": "cross-env NODE_ENV=production vite build -d",
     "clean": "rimraf dist",
     "clean:cache": "rimraf node_modules/.cache/ && rimraf node_modules/.vite",
-    "report": "cross-env REPORT=true npm run build",
-    "type:check": "vue-tsc --noEmit --skipLibCheck",
     "preview": "npm run build && vite preview",
     "preview:dist": "vite preview",
     "log": "conventional-changelog -p angular -i CHANGELOG.md -s",
@@ -26,24 +22,21 @@
     "lint:lint-staged": "lint-staged -c ./.husky/lintstagedrc.js",
     "test:unit": "jest",
     "test:unit-coverage": "jest --coverage",
-    "test:gzip": "npx http-server dist --cors --gzip -c-1",
-    "test:br": "npx http-server dist --cors --brotli -c-1",
-    "reinstall": "rimraf yarn.lock && rimraf package.lock.json && rimraf node_modules && npm run bootstrap",
-    "gen:icon": "esno ./build/generate/icon/index.ts"
+    "reinstall": "rimraf yarn.lock && rimraf package.lock.json && rimraf node_modules && npm run bootstrap"
   },
   "dependencies": {
     "vue": "^3.2.31",
     "ant-design-vue": "^3.2.16",
-    "fe-ent-core": "^1.3.31",
-    "fe-ent-code-editor": "^1.3.31",
-    "fe-ent-echarts": "^1.3.31",
-    "fe-ent-flow-chart": "^1.3.31",
-    "fe-ent-markdown": "^1.3.31",
-    "fe-ent-qrcode": "^1.3.31",
-    "fe-ent-tinymce": "^1.3.31"
+    "fe-ent-core": "^1.4.11",
+    "fe-ent-code-editor": "^1.4.11",
+    "fe-ent-echarts": "^1.4.11",
+    "fe-ent-flow-chart": "^1.4.11",
+    "fe-ent-markdown": "^1.4.11",
+    "fe-ent-qrcode": "^1.4.11",
+    "fe-ent-tinymce": "^1.4.11"
   },
   "devDependencies": {
-    "fe-ent-build": "^1.3.31",
+    "fe-ent-build": "^1.4.11",
     "@commitlint/cli": "^14.1.0",
     "@commitlint/config-conventional": "^14.1.0",
     "@iconify/json": "^1.1.422",

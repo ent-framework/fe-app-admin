@@ -1,5 +1,5 @@
 import { AppModel, AppPageModel } from '../model/app-model';
-import { defHttp } from 'fe-ent-core/lib/utils/http/axios';
+import { defHttp } from 'fe-ent-core/lib/utils';
 
 export const getAppPage = (params?: AppModel) =>
   defHttp.get<AppPageModel>({

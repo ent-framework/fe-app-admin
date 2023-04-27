@@ -12,10 +12,10 @@
 </template>
 <script lang="ts">
   import { defineComponent, ref, computed, unref } from 'vue';
-  import { EntForm, useForm } from 'fe-ent-core/lib/components/form';
+  import { EntForm, useForm } from 'fe-ent-core/lib/components';
   import { formSchema } from './org-data';
-  import { EntDrawer, useDrawerInner } from 'fe-ent-core/lib/components/drawer';
-  import { useMessage } from 'fe-ent-core/lib/hooks/web/use-message';
+  import { EntDrawer, useDrawerInner } from 'fe-ent-core/lib/components';
+  import { useMessage } from 'fe-ent-core/lib/hooks';
   import { saveOrUpdateOrg } from '/@/api/org';
 
   export default defineComponent({
