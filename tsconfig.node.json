@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true,
+    "lib": ["ESNext"],
+    "types": ["node", "fe-ent-core/support", "vite/client"],
+    "skipLibCheck": true
+  },
+  "include": [
+    "mock",
+    "vite.config.ts",
+    "vite.test.config.ts"
+  ],
+  "exclude": ["**/__tests__/**", "**/tests/**", "**/dist"]
+}

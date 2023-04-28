@@ -16,12 +16,10 @@ import { getBasicRoutes } from 'fe-ent-core/lib/router/routes';
 import { initApplication } from '/@/init-application';
 import EntCore from 'fe-ent-core';
 import { QrCode } from 'fe-ent-qrcode';
-//import AntD from 'ant-design-vue';
 
 import 'ant-design-vue/dist/antd.css';
-// import 'fe-ent-core/theme/index.less';
 import 'fe-ent-core/dist/app.css';
-import 'fe-ent-core/lib/style.css';
+import 'fe-ent-core/dist/ent-uno.css';
 import 'uno.css';
 
 //import initUnocssRuntime from '@unocss/runtime';
