@@ -1,5 +1,5 @@
 import { AccountListGetResultModel } from '../model/system-model';
-import { defHttp } from 'fe-ent-core/lib/utils/http/axios';
+import { defHttp } from 'fe-ent-core/lib/utils';
 
 export const getSysConfigGroupPage = (params: any) =>
   defHttp.get<AccountListGetResultModel>({

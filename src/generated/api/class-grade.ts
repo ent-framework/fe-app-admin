@@ -1,6 +1,6 @@
 import { ClassGrade } from '/@/generated/model/class-grade';
 import { ClassGradePageModel } from '/@/generated/model/class-grade';
-import { defHttp } from 'fe-ent-core/lib/utils/http/axios';
+import { defHttp } from 'fe-ent-core/lib/utils';
 
 /**
  * 班级 服务请求类

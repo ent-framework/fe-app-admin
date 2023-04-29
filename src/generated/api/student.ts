@@ -1,6 +1,6 @@
 import { Student } from '/@/generated/model/student';
 import { StudentPageModel } from '/@/generated/model/student';
-import { defHttp } from 'fe-ent-core/lib/utils/http/axios';
+import { defHttp } from 'fe-ent-core/lib/utils';
 
 /**
  * 学生 服务请求类

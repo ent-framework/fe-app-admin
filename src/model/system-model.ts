@@ -1,4 +1,4 @@
-import { BasicPageParams, BasicFetchResult } from 'fe-ent-core/lib/logics/api';
+import { BasicPageParams, BasicFetchResult } from 'fe-ent-core/lib/logics/model';
 
 export type AccountParams = BasicPageParams & {
   account?: string;

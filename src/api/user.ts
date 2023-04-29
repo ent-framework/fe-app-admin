@@ -4,7 +4,7 @@ import {
   UserListGetResultModel,
   UserGrantRoleModel,
 } from '../model/user-model';
-import { defHttp } from 'fe-ent-core/lib/utils/http/axios';
+import { defHttp } from 'fe-ent-core/lib/utils';
 
 export const getUserPage = (params: UserParams) =>
   defHttp.get<UserListGetResultModel>({

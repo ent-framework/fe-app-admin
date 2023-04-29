@@ -1,5 +1,5 @@
 import { ResourcePageListGetResultModel, ResourcePageParams } from '../model/resource-model';
-import { defHttp } from 'fe-ent-core/lib/utils/http/axios';
+import { defHttp } from 'fe-ent-core/lib/utils';
 
 export const getResourcePageList = (params?: ResourcePageParams) =>
   defHttp.get<ResourcePageListGetResultModel>({

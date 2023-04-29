@@ -2,8 +2,8 @@
 import 'virtual:svg-icons-register';
 import App from './app.vue';
 import { createApp } from 'vue';
-import { initAppConfigStore } from 'fe-ent-core/lib/logics/init-app-config';
-import { setupErrorHandle } from 'fe-ent-core/lib/logics/error-handle';
+import { initAppConfigStore } from 'fe-ent-core/lib/logics';
+import { setupErrorHandle } from 'fe-ent-core/lib/logics';
 import { setupRouter, router } from 'fe-ent-core/lib/router';
 import { setupRouterGuard } from 'fe-ent-core/lib/router/guard';
 import { setupStore } from 'fe-ent-core/lib/store';
@@ -14,7 +14,6 @@ import { useLayout } from 'fe-ent-core/lib/router/helper/layout-helper';
 import { LoginRoute } from 'fe-ent-core/lib/router/routes';
 import { getBasicRoutes } from 'fe-ent-core/lib/router/routes';
 import { initApplication } from '/@/init-application';
-import EntCore from 'fe-ent-core';
 import { QrCode } from 'fe-ent-qrcode';
 
 import 'ant-design-vue/dist/antd.css';
@@ -43,7 +42,6 @@ export async function bootstrap(needLogin: boolean) {
 
   //register components
   //app.use(AntD);
-  app.use(EntCore);
   app.use(QrCode);
 
   // Multilingual configuration

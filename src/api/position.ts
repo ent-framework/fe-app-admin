@@ -3,7 +3,7 @@ import {
   PositionPageListGetResultModel,
   PositionItem,
 } from '../model/position-model';
-import { defHttp } from 'fe-ent-core/lib/utils/http/axios';
+import { defHttp } from 'fe-ent-core/lib/utils';
 
 export const getPositionList = (params?: PositionParams) =>
   defHttp.get<PositionPageListGetResultModel>({

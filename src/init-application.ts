@@ -1,7 +1,7 @@
 import { useUserStoreWithOut } from 'fe-ent-core/lib/store/modules/user';
 import { useI18n } from 'fe-ent-core/lib/hooks/web';
-import { initHttpBridge, initUserBridge } from 'fe-ent-core/lib/logics/bridge';
-import { loginApi, getUserInfo, getPermCode, doLogout } from 'fe-ent-core/lib/logics/api/user';
+import { initHttpBridge, initUserBridge } from 'fe-ent-core/lib/logics';
+import { loginApi, getUserInfo, getPermCode, doLogout } from 'fe-ent-core/lib/logics';
 import { getUserLeftMenus } from '/@/api/menu';
 import { usePermission } from 'fe-ent-core/lib/hooks/web/use-permission';
 // 为了解耦 `packages/*` 下面各模块，不再相互依赖

@@ -1,5 +1,5 @@
 import { OrgParams, OrgListGetResultModel, OrgItem } from '../model/org-model';
-import { defHttp } from 'fe-ent-core/lib/utils/http/axios';
+import { defHttp } from 'fe-ent-core/lib/utils';
 
 export const getOrgList = (params?: OrgParams) =>
   defHttp.get<OrgListGetResultModel>({

@@ -10,26 +10,26 @@ dependencies:
     specifier: ^3.2.16
     version: 3.2.17(vue@3.2.45)
   fe-ent-code-editor:
-    specifier: ^1.4.16
-    version: 1.4.16(ant-design-vue@3.2.17)(fe-ent-core@1.4.16)(vue@3.2.45)
+    specifier: ^1.4.18
+    version: 1.4.18(ant-design-vue@3.2.17)(fe-ent-core@1.4.18)(vue@3.2.45)
   fe-ent-core:
-    specifier: ^1.4.16
-    version: 1.4.16(ant-design-vue@3.2.17)(typescript@4.9.4)(vue@3.2.45)
+    specifier: ^1.4.18
+    version: 1.4.18(ant-design-vue@3.2.17)(typescript@4.9.4)(vue@3.2.45)
   fe-ent-echarts:
-    specifier: ^1.4.16
-    version: 1.4.16(@vueuse/core@9.13.0)(ant-design-vue@3.2.17)(echarts@5.3.1)(fe-ent-core@1.4.16)(vue@3.2.45)
+    specifier: ^1.4.18
+    version: 1.4.18(@vueuse/core@9.13.0)(ant-design-vue@3.2.17)(echarts@5.3.1)(fe-ent-core@1.4.18)(vue@3.2.45)
   fe-ent-flow-chart:
-    specifier: ^1.4.16
-    version: 1.4.16(ant-design-vue@3.2.17)(fe-ent-code-editor@1.4.16)(fe-ent-core@1.4.16)(vue@3.2.45)
+    specifier: ^1.4.18
+    version: 1.4.18(ant-design-vue@3.2.17)(fe-ent-code-editor@1.4.18)(fe-ent-core@1.4.18)(vue@3.2.45)
   fe-ent-markdown:
-    specifier: ^1.4.16
-    version: 1.4.16(ant-design-vue@3.2.17)(fe-ent-core@1.4.16)(vue@3.2.45)
+    specifier: ^1.4.18
+    version: 1.4.18(ant-design-vue@3.2.17)(fe-ent-core@1.4.18)(vue@3.2.45)
   fe-ent-qrcode:
-    specifier: ^1.4.16
-    version: 1.4.16(ant-design-vue@3.2.17)(fe-ent-core@1.4.16)(lodash-es@4.17.21)(vue@3.2.45)
+    specifier: ^1.4.18
+    version: 1.4.18(ant-design-vue@3.2.17)(fe-ent-core@1.4.18)(lodash-es@4.17.21)(vue@3.2.45)
   fe-ent-tinymce:
-    specifier: ^1.4.16
-    version: 1.4.16(ant-design-vue@3.2.17)(fe-ent-core@1.4.16)(vue@3.2.45)
+    specifier: ^1.4.18
+    version: 1.4.18(ant-design-vue@3.2.17)(fe-ent-core@1.4.18)(vue@3.2.45)
   vue:
     specifier: ^3.2.31
     version: 3.2.45
@@ -156,8 +156,8 @@ devDependencies:
     specifier: ^0.10.1
     version: registry.npmmirror.com/esno@0.10.1
   fe-ent-build:
-    specifier: ^1.4.16
-    version: 1.4.16(@ant-design/colors@6.0.0)(@types/node@16.11.26)(ant-design-vue@3.2.17)(mockjs@1.1.0)(postcss@8.4.23)(rollup@3.18.0)(vite@4.2.2)(vue@3.2.45)
+    specifier: ^1.4.18
+    version: 1.4.18(@ant-design/colors@6.0.0)(@types/node@16.11.26)(ant-design-vue@3.2.17)(mockjs@1.1.0)(postcss@8.4.23)(rollup@3.18.0)(vite@4.2.2)(vue@3.2.45)
   fs-extra:
     specifier: ^10.0.0
     version: registry.npmmirror.com/fs-extra@10.0.1
@@ -3468,8 +3468,8 @@ packages:
       reusify: 1.0.4
     dev: true
 
-  /fe-ent-build@1.4.16(@ant-design/colors@6.0.0)(@types/node@16.11.26)(ant-design-vue@3.2.17)(mockjs@1.1.0)(postcss@8.4.23)(rollup@3.18.0)(vite@4.2.2)(vue@3.2.45):
-    resolution: {integrity: sha512-48F1nDiiv5rViRnHXaAR7P0HynylcU4NS/gPJvhB8vvgChUJS1BUy81LCFYZo+57pt0Tbd9nzTz1oQQlfr6mag==}
+  /fe-ent-build@1.4.18(@ant-design/colors@6.0.0)(@types/node@16.11.26)(ant-design-vue@3.2.17)(mockjs@1.1.0)(postcss@8.4.23)(rollup@3.18.0)(vite@4.2.2)(vue@3.2.45):
+    resolution: {integrity: sha512-MwShg0Fkbl0OLVNuABvjBHrtyL/4waUpmCtLpk4GCXklt9tcHomXrZJ2V9bAysZttDqQBBC9AVR7AtDE81mdPw==}
     peerDependencies:
       '@ant-design/colors': ^6.0.0
       ant-design-vue: ^3.2.0
@@ -3508,8 +3508,8 @@ packages:
       - vue
     dev: true
 
-  /fe-ent-code-editor@1.4.16(ant-design-vue@3.2.17)(fe-ent-core@1.4.16)(vue@3.2.45):
-    resolution: {integrity: sha512-dCE5EDPL7RWhECIw8rVUPODM7PIZRAdOqjQp6CGvjOz+DQ7rtYMQgBrYgyN1tup3BsdJgsx/CVF7ZSCawE6hng==}
+  /fe-ent-code-editor@1.4.18(ant-design-vue@3.2.17)(fe-ent-core@1.4.18)(vue@3.2.45):
+    resolution: {integrity: sha512-0XeW4wMfsX8wMYu/fAPNl2w3rVMwhYG2DNXGn3I8Btw6j10ZaZyaAw67S5YOmFd7nv+F1B6InHwfK5Rsr+FkPw==}
     engines: {node: ^12 || >=14}
     peerDependencies:
       ant-design-vue: ^3.2.0
@@ -3518,12 +3518,12 @@ packages:
     dependencies:
       ant-design-vue: 3.2.17(vue@3.2.45)
       codemirror: 5.65.2
-      fe-ent-core: 1.4.16(ant-design-vue@3.2.17)(typescript@4.9.4)(vue@3.2.45)
+      fe-ent-core: 1.4.18(ant-design-vue@3.2.17)(typescript@4.9.4)(vue@3.2.45)
       vue: 3.2.45
     dev: false
 
-  /fe-ent-core@1.4.16(ant-design-vue@3.2.17)(typescript@4.9.4)(vue@3.2.45):
-    resolution: {integrity: sha512-sodrWGXEPb8hdQ8blODHFpsCCglfbFcbOk9B0XjZkw5SCbGD+8IlLvVHIx1/+G2lyfxAksS/Yc11VsK0GX9HmA==}
+  /fe-ent-core@1.4.18(ant-design-vue@3.2.17)(typescript@4.9.4)(vue@3.2.45):
+    resolution: {integrity: sha512-yjDzdWVnX11DbWXOpcCJEaKa1pEvDrtnVZbMJmDNfuQUAYyT+ggwVwCk7D/SLvM89Eu26XGL8Dp8X5YKzjlG9g==}
     engines: {node: ^12 || >=14}
     peerDependencies:
       ant-design-vue: ^3.2.0
@@ -3561,8 +3561,8 @@ packages:
       - typescript
     dev: false
 
-  /fe-ent-echarts@1.4.16(@vueuse/core@9.13.0)(ant-design-vue@3.2.17)(echarts@5.3.1)(fe-ent-core@1.4.16)(vue@3.2.45):
-    resolution: {integrity: sha512-aSmnq5gx4GaUJxu9QXlJHA5hj/RS4h9+eP/sRRjNCYjat3/wxcBkl57N5NMkJWvZTxcPY0zlH8zGWLfLwrkWYw==}
+  /fe-ent-echarts@1.4.18(@vueuse/core@9.13.0)(ant-design-vue@3.2.17)(echarts@5.3.1)(fe-ent-core@1.4.18)(vue@3.2.45):
+    resolution: {integrity: sha512-pRlsFq5khDirllSDQcv3X6ka39bJvLEdk3Wr0daqo10H75f2iZENIcPaTTffeI0E+ZrlBwpqqJ/O7oYgIFlg+A==}
     engines: {node: ^12 || >=14}
     peerDependencies:
       '@vueuse/core': ^9.13.0
@@ -3575,12 +3575,12 @@ packages:
       '@vueuse/core': 9.13.0(vue@3.2.45)
       ant-design-vue: 3.2.17(vue@3.2.45)
       echarts: 5.3.1
-      fe-ent-core: 1.4.16(ant-design-vue@3.2.17)(typescript@4.9.4)(vue@3.2.45)
+      fe-ent-core: 1.4.18(ant-design-vue@3.2.17)(typescript@4.9.4)(vue@3.2.45)
       vue: 3.2.45
     dev: false
 
-  /fe-ent-flow-chart@1.4.16(ant-design-vue@3.2.17)(fe-ent-code-editor@1.4.16)(fe-ent-core@1.4.16)(vue@3.2.45):
-    resolution: {integrity: sha512-QESDPVRv9TlqUy6T84EQp2nx0gBS6eLb1JpMdLN8y3ytIgm+Idgqhpp7fNl0uAxWsOcCHo14+Yhpt0AkSC3V7g==}
+  /fe-ent-flow-chart@1.4.18(ant-design-vue@3.2.17)(fe-ent-code-editor@1.4.18)(fe-ent-core@1.4.18)(vue@3.2.45):
+    resolution: {integrity: sha512-BR8BLglbtv5lWujkaQnGhZn8W96k+mrhJsoWt+7V5pk6t0ruUSmRA4lIIpWA1ergGfGXyW9jV0D0JLcQwFoFjw==}
     engines: {node: ^12 || >=14}
     peerDependencies:
       ant-design-vue: ^3.2.0
@@ -3592,13 +3592,13 @@ packages:
       '@logicflow/core': 1.1.6
       '@logicflow/extension': 1.1.6
       ant-design-vue: 3.2.17(vue@3.2.45)
-      fe-ent-code-editor: 1.4.16(ant-design-vue@3.2.17)(fe-ent-core@1.4.16)(vue@3.2.45)
-      fe-ent-core: 1.4.16(ant-design-vue@3.2.17)(typescript@4.9.4)(vue@3.2.45)
+      fe-ent-code-editor: 1.4.18(ant-design-vue@3.2.17)(fe-ent-core@1.4.18)(vue@3.2.45)
+      fe-ent-core: 1.4.18(ant-design-vue@3.2.17)(typescript@4.9.4)(vue@3.2.45)
       vue: 3.2.45
     dev: false
 
-  /fe-ent-markdown@1.4.16(ant-design-vue@3.2.17)(fe-ent-core@1.4.16)(vue@3.2.45):
-    resolution: {integrity: sha512-u2UcWL+tGD7y24mGOAdTxe8C+YIyb/voqmJ5Jr9YCDxG2ZBi9M4UdD4fpneKRm/5izk7giam3TjvcqhTPesHWg==}
+  /fe-ent-markdown@1.4.18(ant-design-vue@3.2.17)(fe-ent-core@1.4.18)(vue@3.2.45):
+    resolution: {integrity: sha512-853nySLQ9oHhbMIzybPtXM70M089lIx0P4SgAL5V+OFxB+07Ztn3NSi0r/5C7XJBmAPFzR4tPYTL5QxogzCzHA==}
     engines: {node: ^12 || >=14}
     peerDependencies:
       ant-design-vue: ^3.2.0
@@ -3607,13 +3607,13 @@ packages:
     dependencies:
       '@ant-design/colors': 6.0.0
       ant-design-vue: 3.2.17(vue@3.2.45)
-      fe-ent-core: 1.4.16(ant-design-vue@3.2.17)(typescript@4.9.4)(vue@3.2.45)
+      fe-ent-core: 1.4.18(ant-design-vue@3.2.17)(typescript@4.9.4)(vue@3.2.45)
       vditor: 3.8.12
       vue: 3.2.45
     dev: false
 
-  /fe-ent-qrcode@1.4.16(ant-design-vue@3.2.17)(fe-ent-core@1.4.16)(lodash-es@4.17.21)(vue@3.2.45):
-    resolution: {integrity: sha512-f7y0tipsfYom1jImZhW2e1GVKGlgoPgaryC2VsHxfLRCySZz2YztnPDm5HXHqAwcL9rtlP3IAiR8zH6JnIKoww==}
+  /fe-ent-qrcode@1.4.18(ant-design-vue@3.2.17)(fe-ent-core@1.4.18)(lodash-es@4.17.21)(vue@3.2.45):
+    resolution: {integrity: sha512-QxyVYCe3XKUA3u1Ku1h2Ti8QCkSlEGZz3mGcga0YvFH5fxBGMOdz9wK8VbFwaVvzgtU8dC1/jrxjFVW+dcfa9A==}
     engines: {node: ^12 || >=14}
     peerDependencies:
       ant-design-vue: ^3.2.0
@@ -3623,14 +3623,14 @@ packages:
     dependencies:
       '@ant-design/colors': 6.0.0
       ant-design-vue: 3.2.17(vue@3.2.45)
-      fe-ent-core: 1.4.16(ant-design-vue@3.2.17)(typescript@4.9.4)(vue@3.2.45)
+      fe-ent-core: 1.4.18(ant-design-vue@3.2.17)(typescript@4.9.4)(vue@3.2.45)
       lodash-es: 4.17.21
       qrcode: 1.5.1
       vue: 3.2.45
     dev: false
 
-  /fe-ent-tinymce@1.4.16(ant-design-vue@3.2.17)(fe-ent-core@1.4.16)(vue@3.2.45):
-    resolution: {integrity: sha512-QOL/jJnR0KUNk24opnZv0TzxqingXBZF0qmr4vLzXM2Ouyn/Co5cRiU3I+cu+UK8nf4RPe3EV6aA7db4r5cKEg==}
+  /fe-ent-tinymce@1.4.18(ant-design-vue@3.2.17)(fe-ent-core@1.4.18)(vue@3.2.45):
+    resolution: {integrity: sha512-1TfxIaTMd3/yp+otZOYCeeJIoz+1aYWZylxm9KbiDBJ2xXDKtrbQd+tC8lr9BalUWBT+DPbOkwMrD5OkrH2GUw==}
     engines: {node: ^12 || >=14}
     peerDependencies:
       ant-design-vue: ^3.2.0
@@ -3639,7 +3639,7 @@ packages:
     dependencies:
       '@ant-design/colors': 6.0.0
       ant-design-vue: 3.2.17(vue@3.2.45)
-      fe-ent-core: 1.4.16(ant-design-vue@3.2.17)(typescript@4.9.4)(vue@3.2.45)
+      fe-ent-core: 1.4.18(ant-design-vue@3.2.17)(typescript@4.9.4)(vue@3.2.45)
       tinymce: 5.10.0
       vue: 3.2.45
     dev: false

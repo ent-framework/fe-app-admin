@@ -8,7 +8,6 @@ export default defineApplicationConfig({
           login: 'login.html',
         },
       },
-      minify: false,
       cssCodeSplit: true,
       cssTarget: 'chrome61',
     },

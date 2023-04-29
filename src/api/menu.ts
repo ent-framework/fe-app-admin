@@ -4,7 +4,7 @@ import {
   MenuListGetResultModel,
   MenuModel,
 } from '../model/menu-model';
-import { defHttp } from 'fe-ent-core/lib/utils/http/axios';
+import { defHttp } from 'fe-ent-core/lib/utils';
 
 export const getMenuList = (params?: MenuParams) =>
   defHttp.get<MenuListGetResultModel>({

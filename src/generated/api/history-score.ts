@@ -1,6 +1,6 @@
 import { HistoryScore } from '/@/generated/model/history-score';
 import { HistoryScorePageModel } from '/@/generated/model/history-score';
-import { defHttp } from 'fe-ent-core/lib/utils/http/axios';
+import { defHttp } from 'fe-ent-core/lib/utils';
 
 /**
  * 考试记录 服务请求类

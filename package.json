@@ -26,16 +26,16 @@
   "dependencies": {
     "vue": "^3.2.31",
     "ant-design-vue": "^3.2.16",
-    "fe-ent-core": "^1.4.16",
-    "fe-ent-code-editor": "^1.4.16",
-    "fe-ent-echarts": "^1.4.16",
-    "fe-ent-flow-chart": "^1.4.16",
-    "fe-ent-markdown": "^1.4.16",
-    "fe-ent-qrcode": "^1.4.16",
-    "fe-ent-tinymce": "^1.4.16"
+    "fe-ent-core": "^1.4.18",
+    "fe-ent-code-editor": "^1.4.18",
+    "fe-ent-echarts": "^1.4.18",
+    "fe-ent-flow-chart": "^1.4.18",
+    "fe-ent-markdown": "^1.4.18",
+    "fe-ent-qrcode": "^1.4.18",
+    "fe-ent-tinymce": "^1.4.18"
   },
   "devDependencies": {
-    "fe-ent-build": "^1.4.16",
+    "fe-ent-build": "^1.4.18",
     "@commitlint/cli": "^14.1.0",
     "@commitlint/config-conventional": "^14.1.0",
     "@iconify/json": "^1.1.422",

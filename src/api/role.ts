@@ -7,7 +7,7 @@ import {
   GrantMenuRoleParams,
   GrantMenuResourceParams,
 } from '../model/role-model';
-import { defHttp } from 'fe-ent-core/lib/utils/http/axios';
+import { defHttp } from 'fe-ent-core/lib/utils';
 import { CheckKeys } from 'fe-ent-core/lib/components/tree';
 
 export const getRoleListByPage = (params?: RolePageParams) =>

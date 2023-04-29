@@ -1,6 +1,6 @@
 import { Teacher } from '/@/generated/model/teacher';
 import { TeacherPageModel } from '/@/generated/model/teacher';
-import { defHttp } from 'fe-ent-core/lib/utils/http/axios';
+import { defHttp } from 'fe-ent-core/lib/utils';
 
 /**
  * 教师 服务请求类
