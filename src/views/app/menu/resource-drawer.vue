@@ -9,7 +9,7 @@
   >
     <EntForm @register="registerForm">
       <template #menu="{ model, field }">
-        <BasicTree
+        <EntTree
           v-model:value="model[field]"
           :treeData="resourceData"
           :fieldNames="{ title: 'nodeName', key: 'code' }"
@@ -27,13 +27,13 @@
   import { EntForm, useForm } from 'fe-ent-core/lib/components/form';
   import { bindResourceFormSchema } from './menu-data';
   import { EntDrawer, useDrawerInner } from 'fe-ent-core/lib/components/drawer';
-  import { BasicTree, TreeItem } from 'fe-ent-core/lib/components/tree';
+  import { EntTree, TreeItem } from 'fe-ent-core/lib/components/tree';
   import { useMessage } from 'fe-ent-core/lib/hooks/web/use-message';
   import { bindMenuResource, getMenuResourceTree, getMenuSelectedResource } from '/@/api/menu';
 
   export default defineComponent({
     name: 'BindResourceDrawer',
-    components: { EntDrawer, EntForm, BasicTree },
+    components: { EntDrawer, EntForm, EntTree },
     emits: ['success', 'register'],
     setup(_, { emit }) {
       const isUpdate = ref(true);

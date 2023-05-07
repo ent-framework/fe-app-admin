@@ -1,11 +1,9 @@
 import type { AppRouteModule } from 'fe-ent-core/lib/router/types';
 
-import { default as LAYOUT } from 'fe-ent-core/lib/layouts/default';
-
 const user: AppRouteModule = {
   path: '/system',
   name: 'AppLog',
-  component: LAYOUT,
+  component: 'LAYOUT',
   redirect: '/system/op-list',
   meta: {
     orderNo: 35,

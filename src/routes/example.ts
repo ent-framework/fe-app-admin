@@ -1,11 +1,9 @@
 import type { AppRouteModule } from 'fe-ent-core/lib/router/types';
 
-import { default as LAYOUT } from 'fe-ent-core/lib/layouts/default';
-
 const routes: AppRouteModule = {
   path: '/example',
   name: 'BaseRouteData',
-  component: LAYOUT,
+  component: 'LAYOUT',
   redirect: '/basic/config',
   meta: {
     icon: 'simple-icons:about-dot-me',

@@ -1,11 +1,9 @@
 import type { AppRouteModule } from 'fe-ent-core/lib/router/types';
 
-import { default as LAYOUT } from 'fe-ent-core/lib/layouts/default';
-
 const app: AppRouteModule = {
   path: '/app',
   name: 'Permission',
-  component: LAYOUT,
+  component: 'LAYOUT',
   redirect: '/app/app-list',
   meta: {
     orderNo: 15,

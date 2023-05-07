@@ -9,7 +9,7 @@
   >
     <EntForm @register="registerForm">
       <template #menu="{ model, field }">
-        <BasicTree
+        <EntTree
           v-model:value="model[field]"
           :treeData="treeData"
           :fieldNames="{ title: 'menuName', key: 'menuId' }"
@@ -28,7 +28,7 @@
   import { EntForm, useForm } from 'fe-ent-core/lib/components/form';
   import { grantMenuFormSchema } from './role-data';
   import { EntDrawer, useDrawerInner } from 'fe-ent-core/lib/components/drawer';
-  import { BasicTree, TreeItem } from 'fe-ent-core/lib/components/tree';
+  import { EntTree, TreeItem } from 'fe-ent-core/lib/components/tree';
   import { useMessage } from 'fe-ent-core/lib/hooks/web/use-message';
   import { grantMenu, getRoleMenus } from '/@/api/role';
   import { getMenuList } from '/@/api/menu';
@@ -37,7 +37,7 @@
 
   export default defineComponent({
     name: 'GrantMenuDrawer',
-    components: { EntDrawer, EntForm, BasicTree },
+    components: { EntDrawer, EntForm, EntTree },
     emits: ['success', 'register'],
     setup(_, { emit }) {
       const treeData = ref<TreeItem[]>([]);

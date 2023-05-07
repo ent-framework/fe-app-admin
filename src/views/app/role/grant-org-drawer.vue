@@ -9,7 +9,7 @@
   >
     <EntForm @register="registerForm">
       <template #org="{ model, field }">
-        <BasicTree
+        <EntTree
           v-model:value="model[field]"
           :treeData="orgData"
           :replaceFields="{ title: 'name', key: 'id' }"
@@ -27,14 +27,14 @@
   import { EntForm, useForm } from 'fe-ent-core/lib/components/form';
   import { grantOrgFormSchema } from './role-data';
   import { EntDrawer, useDrawerInner } from 'fe-ent-core/lib/components/drawer';
-  import { BasicTree, TreeItem } from 'fe-ent-core/lib/components/tree';
+  import { EntTree, TreeItem } from 'fe-ent-core/lib/components/tree';
   import { useMessage } from 'fe-ent-core/lib/hooks/web/use-message';
   import { grantDataScope, getRoleDataScopes } from '/@/api/role';
   import { getOrgTree } from '/@/api/org';
 
   export default defineComponent({
     name: 'GrantOrgDrawer',
-    components: { EntDrawer, EntForm, BasicTree },
+    components: { EntDrawer, EntForm, EntTree },
     emits: ['success', 'register'],
     setup(_, { emit }) {
       const orgData = ref<TreeItem[]>([]);

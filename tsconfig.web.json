@@ -4,13 +4,10 @@
     "composite": true,
     "jsx": "preserve",
     "lib": ["ES2018", "DOM", "DOM.Iterable"],
-    "types": ["unplugin-vue-macros/macros-global"],
+    "types": ["unplugin-vue-macros/macros-global", "vite/client", "fe-ent-core/support"],
     "skipLibCheck": true,
     "strictFunctionTypes": false,
     "removeComments": true,
-    "noEmitHelpers": true,
-    "downlevelIteration": true,
-    "importHelpers": true
   },
   "include": [
     "src/**/*.ts",
