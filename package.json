@@ -25,18 +25,18 @@
   "dependencies": {
     "vue": "3.2.47",
     "ant-design-vue": "3.2.17",
-    "fe-ent-core": "1.4.40",
-    "fe-ent-code-editor": "1.4.40",
-    "fe-ent-echarts": "1.4.40",
-    "fe-ent-flow-chart": "1.4.40",
-    "fe-ent-markdown": "1.4.40",
-    "fe-ent-qrcode": "1.4.40",
-    "fe-ent-tinymce": "1.4.40",
-    "fe-ent-login": "1.4.40",
-    "fe-ent-page": "1.4.40"
+    "fe-ent-core": "1.4.41",
+    "fe-ent-code-editor": "1.4.41",
+    "fe-ent-echarts": "1.4.41",
+    "fe-ent-flow-chart": "1.4.41",
+    "fe-ent-markdown": "1.4.41",
+    "fe-ent-qrcode": "1.4.41",
+    "fe-ent-tinymce": "1.4.41",
+    "fe-ent-login": "1.4.41",
+    "fe-ent-page": "1.4.41"
   },
   "devDependencies": {
-    "fe-ent-build": "1.4.40",
+    "fe-ent-build": "1.4.41",
     "@commitlint/cli": "^14.1.0",
     "@commitlint/config-conventional": "^14.1.0",
     "@iconify/json": "^1.1.422",

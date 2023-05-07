@@ -3,24 +3,24 @@
     <EntTable @register="registerTable">
       <template #toolbar>
         <a-button type="primary" size="small" @click="handleCreate"> 新增 </a-button>
-        <a-button color="warning" size="small" @click="handleDelete"> 删除 </a-button>
+        <a-button color="error" size="small" @click="handleDelete"> 删除 </a-button>
       </template>
     </EntTable>
   </div>
 </template>
 <script lang="ts">
-  import { defineComponent, onMounted, ref } from 'vue';
-  import { EntTable, useTable, EntTableAction } from 'fe-ent-core/lib/components/table';
+  import { defineComponent } from 'vue';
+  import { EntTable, useTable } from 'fe-ent-core/lib/components/table';
   import { getSysConfigGroupPage } from '/@/api/system';
   import { columns } from './group-data';
 
   export default defineComponent({
     name: 'OrgTree',
-    components: { EntTable, EntTableAction },
+    components: { EntTable },
 
     emits: ['select'],
     setup(_, { emit }) {
-      const [registerTable, { reload, getSelectRows }] = useTable({
+      const [registerTable, { getSelectRows }] = useTable({
         title: '',
         api: getSysConfigGroupPage,
         columns,

@@ -5,25 +5,27 @@
       <template #toolbar>
         <a-button type="primary" @click="handleCreate">新增配置</a-button>
       </template>
-      <template #action="{ record }">
-        <EntTableAction
-          :actions="[
-            {
-              icon: 'clarity:note-edit-line',
-              tooltip: '编辑配置',
-              onClick: handleEdit.bind(null, record),
-            },
-            {
-              icon: 'ant-design:delete-outlined',
-              color: 'error',
-              tooltip: '删除此配置',
-              popConfirm: {
-                title: '是否确认删除',
-                confirm: handleDelete.bind(null, record),
+      <template #bodyCell="{ column, record }">
+        <template v-if="column.key === 'action'">
+          <EntTableAction
+            :actions="[
+              {
+                icon: 'clarity:note-edit-line',
+                tooltip: '编辑配置',
+                onClick: handleEdit.bind(null, record),
               },
-            },
-          ]"
-        />
+              {
+                icon: 'ant-design:delete-outlined',
+                color: 'error',
+                tooltip: '删除此配置',
+                popConfirm: {
+                  title: '是否确认删除',
+                  confirm: handleDelete.bind(null, record),
+                },
+              },
+            ]"
+          />
+        </template>
       </template>
     </EntTable>
     <DictDrawer @register="registerDrawer" @success="handleSuccess" />

@@ -4,30 +4,32 @@
       <template #toolbar>
         <a-button type="primary" @click="handleCreate"> 新增菜单 </a-button>
       </template>
-      <template #action="{ record }">
-        <EntTableAction
-          :actions="[
-            {
-              icon: 'clarity:note-edit-line',
-              onClick: handleEdit.bind(null, record),
-            },
-            {
-              icon: 'ant-design:delete-outlined',
-              color: 'error',
-              popConfirm: {
-                title: '是否确认删除',
-                confirm: handleDelete.bind(null, record),
+      <template #bodyCell="{ column, record }">
+        <template v-if="column.key === 'action'">
+          <EntTableAction
+            :actions="[
+              {
+                icon: 'clarity:note-edit-line',
+                onClick: handleEdit.bind(null, record),
               },
-            },
-          ]"
-          :dropDownActions="[
-            {
-              icon: 'ant-design:api-twotone',
-              label: '挂载资源',
-              onClick: handleBindRes.bind(null, record),
-            },
-          ]"
-        />
+              {
+                icon: 'ant-design:delete-outlined',
+                color: 'error',
+                popConfirm: {
+                  title: '是否确认删除',
+                  confirm: handleDelete.bind(null, record),
+                },
+              },
+            ]"
+            :dropDownActions="[
+              {
+                icon: 'ant-design:api-twotone',
+                label: '挂载资源',
+                onClick: handleBindRes.bind(null, record),
+              },
+            ]"
+          />
+        </template>
       </template>
     </EntTable>
     <MenuDrawer @register="registerMenuDrawer" @success="handleSuccess" />
@@ -60,6 +62,7 @@
         formConfig: {
           labelWidth: 120,
           schemas: searchFormSchema,
+          autoSubmitOnEnter: true,
         },
         isTreeTable: true,
         pagination: false,

@@ -1,19 +1,21 @@
 <template>
   <EntPageWrapper>
     <EntTable @register="registerTable">
-      <template #action="{ record }">
-        <EntTableAction
-          :actions="[
-            {
-              icon: 'ant-design:arrow-down-outlined',
-              color: 'error',
-              popConfirm: {
-                title: '是否强制下线',
-                confirm: handleRemoveSession.bind(null, record),
+      <template #bodyCell="{ column, record }">
+        <template v-if="column.key === 'action'">
+          <EntTableAction
+            :actions="[
+              {
+                icon: 'ant-design:arrow-down-outlined',
+                color: 'error',
+                popConfirm: {
+                  title: '是否强制下线',
+                  confirm: handleRemoveSession.bind(null, record),
+                },
               },
-            },
-          ]"
-        />
+            ]"
+          />
+        </template>
       </template>
     </EntTable>
   </EntPageWrapper>

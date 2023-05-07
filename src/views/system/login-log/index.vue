@@ -1,21 +1,6 @@
 <template>
   <EntPageWrapper>
-    <EntTable @register="registerTable">
-      <template #action="{ record }">
-        <EntTableAction
-          :actions="[
-            {
-              icon: 'ant-design:arrow-down-outlined',
-              color: 'error',
-              popConfirm: {
-                title: '是否强制下线',
-                confirm: handleRemoveSession.bind(null, record),
-              },
-            },
-          ]"
-        />
-      </template>
-    </EntTable>
+    <EntTable @register="registerTable"> </EntTable>
   </EntPageWrapper>
 </template>
 <script lang="ts">
@@ -66,7 +51,7 @@
 
   export default defineComponent({
     name: 'LoginLogsList',
-    components: { EntTable, EntTableAction, EntPageWrapper },
+    components: { EntTable, EntPageWrapper },
     setup() {
       const { createMessage } = useMessage();
       const [registerTable, { reload }] = useTable({
@@ -76,13 +61,6 @@
         showTableSetting: true,
         bordered: true,
         showIndexColumn: true,
-        actionColumn: {
-          width: 80,
-          title: '操作',
-          dataIndex: 'action',
-          slots: { customRender: 'action' },
-          fixed: 'right',
-        },
       });
 
       function handleRemoveSession(record: Recordable) {

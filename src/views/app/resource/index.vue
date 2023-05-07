@@ -1,16 +1,18 @@
 <template>
   <div>
     <EntTable @register="registerTable">
-      <template #action="{ record }">
-        <EntTableAction
-          :actions="[
-            {
-              icon: 'clarity:info-standard-line',
-              tooltip: '查看详情',
-              onClick: handleEdit.bind(null, record),
-            },
-          ]"
-        />
+      <template #bodyCell="{ column, record }">
+        <template v-if="column.key === 'action'">
+          <EntTableAction
+            :actions="[
+              {
+                icon: 'clarity:info-standard-line',
+                tooltip: '查看详情',
+                onClick: handleEdit.bind(null, record),
+              },
+            ]"
+          />
+        </template>
       </template>
     </EntTable>
     <RoleDrawer @register="registerDrawer" @success="handleSuccess" />
@@ -39,6 +41,7 @@
         formConfig: {
           labelWidth: 120,
           schemas: searchFormSchema,
+          autoSubmitOnEnter: true,
         },
         rowKey: 'resourceId',
         useSearchForm: true,

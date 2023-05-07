@@ -3,7 +3,7 @@
     <EntTable @register="registerTable">
       <template #toolbar>
         <a-button type="primary" size="small" @click="handleCreate"> 新增 </a-button>
-        <a-button color="warning" size="small" @click="handleDelete"> 删除 </a-button>
+        <a-button color="error" size="small" @click="handleDelete"> 删除 </a-button>
       </template>
     </EntTable>
   </div>

@@ -1,19 +1,21 @@
 <template>
   <EntPageWrapper>
     <EntTable @register="registerTable">
-      <template #action="{ record }">
-        <EntTableAction
-          :actions="[
-            {
-              icon: 'ant-design:arrow-down-outlined',
-              color: 'error',
-              popConfirm: {
-                title: '是否强制下线',
-                confirm: handleRemoveSession.bind(null, record),
+      <template #bodyCell="{ column, record }">
+        <template v-if="column.key === 'action'">
+          <EntTableAction
+            :actions="[
+              {
+                icon: 'ant-design:arrow-down-outlined',
+                color: 'error',
+                popConfirm: {
+                  title: '是否强制下线',
+                  confirm: handleRemoveSession.bind(null, record),
+                },
               },
-            },
-          ]"
-        />
+            ]"
+          />
+        </template>
       </template>
     </EntTable>
   </EntPageWrapper>
@@ -51,11 +53,6 @@
       dataIndex: 'logName',
       width: 100,
     },
-    {
-      title: '请求地址',
-      dataIndex: 'requestUrl',
-      width: 100,
-    },
   ];
 
   export default defineComponent({
@@ -70,12 +67,6 @@
         showTableSetting: true,
         bordered: true,
         showIndexColumn: true,
-        actionColumn: {
-          width: 80,
-          title: '操作',
-          dataIndex: 'action',
-          fixed: 'right',
-        },
       });
 
       function handleRemoveSession(record: Recordable) {

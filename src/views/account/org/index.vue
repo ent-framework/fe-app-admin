@@ -4,23 +4,25 @@
       <template #toolbar>
         <a-button type="primary" @click="handleCreate"> 新增部门 </a-button>
       </template>
-      <template #action="{ record }">
-        <EntTableAction
-          :actions="[
-            {
-              icon: 'clarity:note-edit-line',
-              onClick: handleEdit.bind(null, record),
-            },
-            {
-              icon: 'ant-design:delete-outlined',
-              color: 'error',
-              popConfirm: {
-                title: '是否确认删除',
-                confirm: handleDelete.bind(null, record),
+      <template #bodyCell="{ column, record }">
+        <template v-if="column.key === 'action'">
+          <EntTableAction
+            :actions="[
+              {
+                icon: 'clarity:note-edit-line',
+                onClick: handleEdit.bind(null, record),
               },
-            },
-          ]"
-        />
+              {
+                icon: 'ant-design:delete-outlined',
+                color: 'error',
+                popConfirm: {
+                  title: '是否确认删除',
+                  confirm: handleDelete.bind(null, record),
+                },
+              },
+            ]"
+          />
+        </template>
       </template>
     </EntTable>
     <OrgDrawer @register="registerDrawer" @success="handleSuccess" />
@@ -49,6 +51,7 @@
         formConfig: {
           labelWidth: 120,
           schemas: searchFormSchema,
+          autoSubmitOnEnter: true,
         },
         isTreeTable: true,
         pagination: false,
