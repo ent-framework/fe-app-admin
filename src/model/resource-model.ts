@@ -23,8 +23,6 @@ export interface ResourceModel {
   viewFlag?: any;
 }
 
-export interface ResourcePageParams {
-
-}
+export interface ResourcePageParams {}
 
 export type ResourcePageListGetResultModel = BasicFetchResult<ResourceModel>;

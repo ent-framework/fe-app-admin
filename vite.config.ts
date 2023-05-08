@@ -10,7 +10,7 @@ export default defineApplicationConfig({
         },
       },
       cssCodeSplit: true,
-      minify: false,
+      minify: true,
     },
     optimizeDeps: {
       include: ['@iconify/iconify', 'ant-design-vue'],

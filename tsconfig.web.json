@@ -8,11 +8,12 @@
     "skipLibCheck": true,
     "strictFunctionTypes": false,
     "removeComments": true,
+    "paths": {
+      "/@/*": ["src"]
+    }
   },
   "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "src/**/*.vue"
+    "src"
   ],
   "exclude": [
     "node_modules",

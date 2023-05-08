@@ -5,9 +5,6 @@
     </EntAppProvider>
   </ConfigProvider>
 </template>
-<style>
-  @import 'fe-ent-core/dist/ent-uno.css';
-</style>
 <script lang="ts" setup>
   import { ConfigProvider } from 'ant-design-vue';
   import { EntAppProvider } from 'fe-ent-core/lib/components/application';
@@ -20,3 +17,6 @@
   // Listening to page changes and dynamically changing site titles
   useTitle();
 </script>
+<style>
+  @import 'fe-ent-core/dist/ent-uno.css';
+</style>

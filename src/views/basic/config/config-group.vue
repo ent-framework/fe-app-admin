@@ -13,6 +13,7 @@
   import { EntTable, useTable } from 'fe-ent-core/lib/components/table';
   import { getSysConfigGroupPage } from '/@/api/system';
   import { columns } from './group-data';
+  import { Recordable } from 'fe-ent-core/es/types';
 
   export default defineComponent({
     name: 'OrgTree',

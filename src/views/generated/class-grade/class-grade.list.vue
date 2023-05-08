@@ -62,7 +62,11 @@
   import { defineComponent, reactive, ref } from 'vue';
 
   import { EntTable, useTable, EntTableAction } from 'fe-ent-core/lib/components/table';
-  import { ClassGradePage, ClassGradeDeleteById, ClassGradeBatchDelete } from '/@/generated/api/class-grade';
+  import {
+    ClassGradePage,
+    ClassGradeDeleteById,
+    ClassGradeBatchDelete,
+  } from '/@/generated/api/class-grade';
   import { useDrawer } from 'fe-ent-core/lib/components/drawer';
   import ClassGradeDrawer from './class-grade.detail.vue';
 

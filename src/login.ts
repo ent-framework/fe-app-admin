@@ -11,11 +11,12 @@ import { setupGlobDirectives } from 'fe-ent-core/lib/directives';
 import { setupI18n } from 'fe-ent-core/lib/locales/setup-i18n';
 import { registerGlobComp } from 'fe-ent-core/lib/components/register-glob-comp';
 import { initApplication } from '/@/init-application';
-import { LoginRoute } from 'fe-ent-login';
+//import { LoginRoute } from 'fe-ent-login';
+import { LoginRoute } from '/@/views/login/router';
 
 import 'ant-design-vue/dist/antd.css';
-import 'fe-ent-login/dist/style.css';
 import 'fe-ent-core/dist/app.css';
+import 'fe-ent-login/dist/style.css';
 
 async function bootstrap() {
   const app = createApp(App);

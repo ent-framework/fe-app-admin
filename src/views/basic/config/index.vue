@@ -42,13 +42,12 @@
   import ConfigDrawer from './config-drawer.vue';
 
   import { columns, searchFormSchema } from './config-data';
-  import { useGo } from 'fe-ent-core/lib/hooks/web/use-page';
+  import { Recordable } from 'fe-ent-core/es/types';
 
   export default defineComponent({
     name: 'ConfigManagement',
     components: { EntTable, EntPageWrapper, ConfigGroup, ConfigDrawer, EntTableAction },
     setup() {
-      const go = useGo();
       const [registerDrawer, { openDrawer }] = useDrawer();
       const searchInfo = reactive<Recordable>({});
       const [registerTable, { reload, updateTableDataRecord }] = useTable({
@@ -72,7 +71,6 @@
           width: 120,
           title: '操作',
           dataIndex: 'action',
-          slots: { customRender: 'action' },
         },
       });
 

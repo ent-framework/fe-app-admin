@@ -1,20 +1,16 @@
 <template>
   <EntPageWrapper>
-    <EntTable @register="registerTable"> </EntTable>
+    <EntTable @register="registerTable" />
   </EntPageWrapper>
 </template>
 <script lang="ts">
   import { defineComponent } from 'vue';
 
-  import {
-    EntTable,
-    useTable,
-    EntTableAction,
-    BasicColumn,
-  } from 'fe-ent-core/lib/components/table';
+  import { EntTable, useTable, BasicColumn } from 'fe-ent-core/lib/components/table';
   import { getLoginLogsPage, removeSession } from '/@/api/system';
   import { EntPageWrapper } from 'fe-ent-core/lib/components/page';
   import { useMessage } from 'fe-ent-core/lib/hooks/web/use-message';
+  import { Recordable } from 'fe-ent-core/es/types';
   export const columns: BasicColumn[] = [
     {
       title: '登录姓名',

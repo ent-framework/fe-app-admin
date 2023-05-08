@@ -62,7 +62,11 @@
   import { defineComponent, reactive, ref } from 'vue';
 
   import { EntTable, useTable, EntTableAction } from 'fe-ent-core/lib/components/table';
-  import { HistoryScorePage, HistoryScoreDeleteById, HistoryScoreBatchDelete } from '/@/generated/api/history-score';
+  import {
+    HistoryScorePage,
+    HistoryScoreDeleteById,
+    HistoryScoreBatchDelete,
+  } from '/@/generated/api/history-score';
   import { useDrawer } from 'fe-ent-core/lib/components/drawer';
   import HistoryScoreDrawer from './history-score.detail.vue';
 
