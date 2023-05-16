@@ -3,7 +3,7 @@
     <ConfigGroup class="w-1/3 xl:w-1/4" @select="handleSelect" />
     <EntTable @register="registerTable" class="w-2/3 xl:w-3/4" :searchInfo="searchInfo">
       <template #toolbar>
-        <a-button type="primary" @click="handleCreate">新增配置</a-button>
+        <ent-button type="primary" @click="handleCreate">新增配置</ent-button>
       </template>
       <template #bodyCell="{ column, record }">
         <template v-if="column.key === 'action'">

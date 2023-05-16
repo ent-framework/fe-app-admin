@@ -9,7 +9,6 @@
   "include": [
     "mock",
     "vite.config.ts",
-    "vite.test.config.ts"
   ],
   "exclude": ["**/__tests__/**", "**/tests/**", "**/dist"]
 }

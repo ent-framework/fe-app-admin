@@ -17,6 +17,3 @@
   // Listening to page changes and dynamically changing site titles
   useTitle();
 </script>
-<style>
-  @import 'fe-ent-core/dist/ent-uno.css';
-</style>

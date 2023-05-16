@@ -9,7 +9,7 @@
     "strictFunctionTypes": false,
     "removeComments": true,
     "paths": {
-      "/@/*": ["src"]
+      "/@/*": ["src/*"]
     }
   },
   "include": [

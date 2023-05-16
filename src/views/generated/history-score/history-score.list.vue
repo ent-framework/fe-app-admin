@@ -10,7 +10,7 @@
           <template #message>
             <template v-if="checkedKeys.length > 0">
               <span>已选中{{ checkedKeys.length }}条记录(可跨页)</span>
-              <a-button type="link" @click="checkedKeys = []" size="small">清空</a-button>
+              <ent-button type="link" @click="checkedKeys = []" size="small">清空</ent-button>
             </template>
             <template v-else>
               <span>未选中任何记录</span>
@@ -25,9 +25,9 @@
           cancel-text="No"
           @confirm="handleBatchDelete"
         >
-          <a-button type="primary" danger :disabled="checkedKeys.length === 0">删除</a-button>
+          <ent-button type="primary" danger :disabled="checkedKeys.length === 0">删除</ent-button>
         </Popconfirm>
-        <a-button type="primary" @click="handleCreate">新增考试记录</a-button>
+        <ent-button type="primary" @click="handleCreate">新增考试记录</ent-button>
       </template>
       <template #action="{ record }">
         <EntTableAction

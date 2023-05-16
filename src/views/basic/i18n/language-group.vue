@@ -2,8 +2,8 @@
   <div class="bg-white m-4 mr-0 overflow-hidden">
     <EntTable @register="registerTable">
       <template #toolbar>
-        <a-button type="primary" size="small" @click="handleCreate"> 新增 </a-button>
-        <a-button color="warning" size="small" @click="handleDelete"> 删除 </a-button>
+        <ent-button type="primary" size="small" @click="handleCreate"> 新增 </ent-button>
+        <ent-button color="warning" size="small" @click="handleDelete"> 删除 </ent-button>
       </template>
     </EntTable>
   </div>
